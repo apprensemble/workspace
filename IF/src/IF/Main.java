@@ -2,6 +2,7 @@ package IF;
 
 import java.util.Comparator;
 import java.util.Optional;
+import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -33,8 +34,18 @@ public class Main {
 			Optional.empty();
 		//opts.ifPresent(s->System.out.println(s));
 		System.out.println(opts.map(s->Integer.valueOf(s)).orElse(0));
-	}
+		BiFunction<Couple<Integer>,Couple<Integer>,Integer> produitScalaire = (s1,s2)->s1.getFirst() * s2.getFirst() + s1.getSecond() * s2.getSecond();   
+		Couple<Integer> c1 = new Couple<Integer>(3,4);
+		Couple<Integer> c2 = new Couple<Integer>(0,-5);
+		Couple<Integer> c3 = new Couple<Integer>(-1,-2);
 
-	
-	
+		Integer i = produitScalaire.apply(c1,c2);
+		Function<Couple<Integer>,Integer> calculDistance = s->s.getFirst() * s.getFirst() + s.getSecond() * s.getSecond();
+		Comparator<Couple<Integer>> comparePoint = (p1,p2) -> calculDistance.apply(p1) - calculDistance.apply(p2);
+		Function<Integer,String> signe = r -> r < 0 ? "<" : (r > 0 ? ">" : "=");
+		int r1 = comparePoint.compare(c1,c2);
+		int r2 = comparePoint.compare(c2,c3);
+		System.out.format("%s %s %s\n",c1,signe.apply(r1),c2);
+		System.out.format("%s %s %s\n",c2,signe.apply(r2),c3);
+	}
 }
