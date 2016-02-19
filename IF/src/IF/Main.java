@@ -7,6 +7,7 @@ import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -23,8 +24,9 @@ public class Main {
 		Function<String,Double> f = s->Double.valueOf(s);
 		Double iUn = f.apply(un);
 		System.out.println(iUn+1);
-		//Supplier<String> sup = new String("hello");
-		//System.out.println(sup.get());
+		Supplier<String> sup = ()->new String("hello supplier");
+		
+		System.out.println(sup.get());
 		Predicate<String> p = s -> s.length() >= 10;
 		System.out.println(p.test("hello"));
 		Function<String,Integer> f2 = s->s.length() * 2;
@@ -82,9 +84,7 @@ public class Main {
 		//System.out.println(Arrays.asList(tabInt).contains(12) ? "contient" : "ne contient pas");
 		BiFunction<Integer[],Integer,Optional<Integer>> tabContient = (monTab,monInt)->Arrays.asList(monTab).contains(monInt) ? Optional.of(monInt) : Optional.empty();
 		for (Integer valeur : tabTest) {
-			tabContient.apply(tabInt,valeur).ifPresent(v -> System.out.format("la valeur %s est presente\n",v.toString()));
+			tabContient.apply(tabInt,valeur).ifPresent(v -> System.out.format("la valeur %s est presente\n",v));
 		}
-		//System.out.format(tabContient.apply(tabInt,tabTest[0]).isPresent() ? "valeur %s presente",tabTest[0].toString() : " " );
-		//System.out.format(tabContient.apply(tabInt,tabTest[1]).isPresent() ? "valeur %s presente",tabTest[1].toString() : " " );
 	}
 }
