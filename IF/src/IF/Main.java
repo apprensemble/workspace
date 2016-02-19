@@ -78,9 +78,13 @@ public class Main {
 		//exercice7
 
 		Integer[] tabInt = new Integer[]{12,14,2,8,16};
+		Integer[] tabTest = new Integer[]{15,12,18,20,8};
 		//System.out.println(Arrays.asList(tabInt).contains(12) ? "contient" : "ne contient pas");
 		BiFunction<Integer[],Integer,Optional<Integer>> tabContient = (monTab,monInt)->Arrays.asList(monTab).contains(monInt) ? Optional.of(monInt) : Optional.empty();
-		System.out.println(tabContient.apply(tabInt,12).isPresent() ? "valeur presente" : "non trouve");
-		System.out.println(tabContient.apply(tabInt,10).isPresent() ? "valeur presente" : "non trouve");
+		for (Integer valeur : tabTest) {
+			tabContient.apply(tabInt,valeur).ifPresent(v -> System.out.format("la valeur %s est presente\n",v.toString()));
+		}
+		//System.out.format(tabContient.apply(tabInt,tabTest[0]).isPresent() ? "valeur %s presente",tabTest[0].toString() : " " );
+		//System.out.format(tabContient.apply(tabInt,tabTest[1]).isPresent() ? "valeur %s presente",tabTest[1].toString() : " " );
 	}
 }
