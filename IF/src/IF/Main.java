@@ -1,5 +1,6 @@
 package IF;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Optional;
 import java.util.function.BiFunction;
@@ -13,6 +14,11 @@ import java.util.regex.Pattern;
 public class Main {
 	public static String un = "1";
 	
+	/**
+	 *
+	 *
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		Function<String,Double> f = s->Double.valueOf(s);
 		Double iUn = f.apply(un);
@@ -47,5 +53,34 @@ public class Main {
 		int r2 = comparePoint.compare(c2,c3);
 		System.out.format("%s %s %s\n",c1,signe.apply(r1),c2);
 		System.out.format("%s %s %s\n",c2,signe.apply(r2),c3);
+
+		//Optionnal
+		//exercice5
+		Optional<String> phrase = Optional.of("Bonjour, comment allez vous M. Bond, ou devrais-je dire M. Moulin?\n");
+		Function<String,Integer> calcNbrMaj = s -> {
+			int n = 0;
+			for (int x = 0; x < s.length(); x++) {
+				String t = s.substring(x, x + 1);
+				if (t.matches("\\p{Upper}")) {
+					n++;
+				}
+			}
+			return n;
+		};
+		Optional<Integer> nbrMaj = phrase.map(s->calcNbrMaj.apply(s));
+		System.out.format("nbr Maj %d", nbrMaj.orElse(0));
+		//exercice6
+		String[] tab = new String[]{"content",null};
+		Optional<String> tab1 = Optional.ofNullable(tab[0]);
+		Optional<String> tab2 = Optional.ofNullable(tab[1]);
+		System.out.format("tab1 : %s; tab2 : %s\n",tab1.orElse("null"),tab2.orElse("null"));
+
+		//exercice7
+
+		Integer[] tabInt = new Integer[]{12,14,2,8,16};
+		//System.out.println(Arrays.asList(tabInt).contains(12) ? "contient" : "ne contient pas");
+		BiFunction<Integer[],Integer,Optional<Integer>> tabContient = (monTab,monInt)->Arrays.asList(monTab).contains(monInt) ? Optional.of(monInt) : Optional.empty();
+		System.out.println(tabContient.apply(tabInt,12).isPresent() ? "valeur presente" : "non trouve");
+		System.out.println(tabContient.apply(tabInt,10).isPresent() ? "valeur presente" : "non trouve");
 	}
 }
