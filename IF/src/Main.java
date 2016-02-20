@@ -1,4 +1,3 @@
-package IF;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -10,6 +9,8 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import couple.Couple;
 
 
 public class Main {
