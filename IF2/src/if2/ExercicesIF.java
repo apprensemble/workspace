@@ -1,4 +1,5 @@
 package if2;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Optional;
 import java.util.function.BiConsumer;
@@ -67,6 +68,7 @@ public class ExercicesIF {
 	}
 
 	public static void exercice5() {
+		System.out.println("Exercice 5");
 		Optional<String> phrase = Optional.of("Bijour Monsieur Vincent,Hahaha");
 		Function<Optional<String>,Integer> cptMaj = p -> {
 		Integer	maj = 0;
@@ -77,7 +79,21 @@ public class ExercicesIF {
 		Consumer<Optional<String>> affCptMaj = p -> {
 			System.out.println("nbr Maj dans la phrase "+p.get()+" : "+cptMaj.apply(p));
 		};
+		System.out.println("Ma version trop stylée");
 		affCptMaj.accept(phrase);
+
+		/*
+		 * version demandé par le prof(je prefere la mienne)
+		 *
+		 */
+		System.out.println("version demandé par le prof");
+		System.out.println("nbr maj dans la phrase "+phrase.get()+" "+phrase.map(p -> {
+		Integer	maj = 0;
+		for (int i = 0; i < p.length(); i++)
+			if (p.substring(i, i+1).matches("\\p{Upper}")) maj++;
+		return maj;
+		}));
+
 
 		/*
 		 * On remplace cette boucle par une fonction et le system.out par un Consumer
@@ -88,11 +104,33 @@ public class ExercicesIF {
 		*/
 	}
 
+	private static void exercice6() {
+		System.out.println("Exercice 6");
+		String[] tab = new String[]{"content",null};
+		Optional<String> tab0 = Optional.of(tab[0]),
+		tab1 = Optional.ofNullable(tab[1]);
+		tab0.ifPresent(v -> System.out.println(v));
+		tab1.ifPresent(v -> System.out.println(v));
+
+	}
+
+	private static void exercice7() {
+		System.out.println("Exercice 7");
+		Integer[] t = {12,11,68,56,34};
+		Integer[] valTest = {1,2,12,68,25};
+		BiFunction<Integer[], Integer, Optional<Integer>> tabContVal = (tab,v) -> Arrays.asList(tab).contains(v) ? Optional.of(v) : Optional.empty();
+		tabContVal.apply(t,12).ifPresent(v -> System.out.format("La valeur %s a été trouvé",v));
+		tabContVal.apply(t,10).ifPresent(v -> System.out.format("La valeur %s a été trouvé",v));
+	}
+
 	public static void main(String[] args) {
 		exercice1();
 		exercice2();
 		exercice3();
 		exercice4();
 		exercice5();
+		exercice6();
+		exercice7();
 	}
+
 }
