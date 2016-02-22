@@ -119,8 +119,14 @@ public class ExercicesIF {
 		Integer[] t = {12,11,68,56,34};
 		Integer[] valTest = {1,2,12,68,25};
 		BiFunction<Integer[], Integer, Optional<Integer>> tabContVal = (tab,v) -> Arrays.asList(tab).contains(v) ? Optional.of(v) : Optional.empty();
-		tabContVal.apply(t,12).ifPresent(v -> System.out.format("La valeur %s a été trouvé",v));
-		tabContVal.apply(t,10).ifPresent(v -> System.out.format("La valeur %s a été trouvé",v));
+		tabContVal.apply(t,12).ifPresent(v -> System.out.format("La valeur %s a été trouvé\n",v));
+		tabContVal.apply(t,10).ifPresent(v -> System.out.format("La valeur %s a été trouvé\n",v));
+		System.out.println("test avec une boucle for :");
+		for (Integer x : Arrays.asList(valTest)) 
+			tabContVal.apply(t,x).ifPresent(v -> System.out.format("La valeur %s a été trouvé\n",v));
+		System.out.println("J'ai trouvé comment faire l'iteration sans for :) l'iteration implicite");
+		Arrays.asList(valTest).forEach(x -> tabContVal.apply(t,x).ifPresent(v -> System.out.format("La valeur %s a été trouvé\n",v)));
+		
 	}
 
 	public static void main(String[] args) {
