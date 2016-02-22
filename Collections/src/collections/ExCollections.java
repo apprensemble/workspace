@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
+import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
@@ -36,21 +37,40 @@ public class ExCollections {
 	}
 
 	private static void exercice6() {
-		// TODO Auto-generated method stub
+		List<String> words = Arrays.asList("virer","tri","rit","meurs","voir","tir","river","muser");
+
+		
 
 	}
 
 	private static void exercice5() {
 		System.out.println("exercice 1 : anagramme");
+		System.out.println("--------\ntest\n-------");
 		Entity mot1 = new Entity("saalut");
 		mot1.etat();
 		String[] liste = {"virer","tri","rit","meurs","voir","tir","river","muser"};
-		Collection<String> lstStr = new ArrayList<>();
+	
+		
+		//version Arrays (inutile mais je voulais essayer)
+
+		System.out.println("----\nVersion brut force\n----");
+		List<String> lstStr = new ArrayList<>();
 		lstStr.addAll(Arrays.asList(liste));
-		Function<ArrayList<String>,ArrayList<Entity>> str2Entity = (cs,ce) -> cs.forEach(mot -> ce.add(new Entity(mot)));
 		Comparator<String> OrdreAlphabetique = (m1,m2) -> m1.compareTo(m2);
 		Arrays.asList(liste).sort(OrdreAlphabetique);
 		Arrays.asList(liste).forEach(mot -> new Entity(mot).etat());
+
+//version plus facile a manipuler...enfin je crois...
+		
+		System.out.println("----\nVersion optimal\n----");
+		BiConsumer<List<String>,Map<String,Entity>> str2Entity = (cs,ce) -> cs.forEach(mot -> ce.put(mot,new Entity(mot)));
+		Map<String,Entity> motEntite = new TreeMap<>();
+		str2Entity.accept(Arrays.asList("virer","tri","rit","meurs","voir","tir","river","muser"), motEntite);
+		motEntite.forEach((s,m) -> m.etat());
+
+		System.out.println("----\ntest anagramme\n----");
+		System.out.println(motEntite.get("rit").isAnagramme(motEntite.get("tri")) ? "oui" : "non");
+		System.out.println(motEntite.get("river").isAnagramme(motEntite.get("tri")) ? "oui" : "non");
 
 	}
 
