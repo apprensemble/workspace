@@ -30,4 +30,14 @@ public class Entity {
 		System.out.println("mot "+mot+" occ "+occurences);
 	
 	}
+	public boolean isAnagramme(Entity mot2) {
+				return occurences.equals(mot2.getOccurences());
+	}
+
+	/**
+	 * @return the occurences
+	 */
+	public Map<Character, Integer> getOccurences() {
+		return occurences;
+	}
 }

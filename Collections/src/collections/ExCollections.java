@@ -1,6 +1,8 @@
 package collections;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -8,6 +10,7 @@ import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.function.BiFunction;
+import java.util.function.Function;
 
 public class ExCollections {
 
@@ -38,12 +41,17 @@ public class ExCollections {
 	}
 
 	private static void exercice5() {
+		System.out.println("exercice 1 : anagramme");
 		Entity mot1 = new Entity("saalut");
 		mot1.etat();
 		String[] liste = {"virer","tri","rit","meurs","voir","tir","river","muser"};
+		Collection<String> lstStr = new ArrayList<>();
+		lstStr.addAll(Arrays.asList(liste));
+		Function<ArrayList<String>,ArrayList<Entity>> str2Entity = (cs,ce) -> cs.forEach(mot -> ce.add(new Entity(mot)));
 		Comparator<String> OrdreAlphabetique = (m1,m2) -> m1.compareTo(m2);
 		Arrays.asList(liste).sort(OrdreAlphabetique);
 		Arrays.asList(liste).forEach(mot -> new Entity(mot).etat());
+
 	}
 
 	private static void exercice4() {
