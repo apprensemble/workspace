@@ -1,0 +1,55 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Animal	nature/Animal.java	/^	public Animal(String n,Integer p,String c) {$/;"	m	class:Animal
+Animal	nature/Animal.java	/^public abstract class Animal {$/;"	c
+Canin	nature/Canin.java	/^	public Canin(String n, Integer p, String c) {$/;"	m	class:Canin
+Canin	nature/Canin.java	/^public abstract class Canin extends Animal {$/;"	c
+Chat	nature/Chat.java	/^	public Chat(String n, Integer p, String c) {$/;"	m	class:Chat
+Chat	nature/Chat.java	/^public class Chat extends Felin {$/;"	c
+Chien	nature/Chien.java	/^	public Chien(String n, Integer p, String c) {$/;"	m	class:Chien
+Chien	nature/Chien.java	/^public class Chien extends Canin {$/;"	c
+Felin	nature/Felin.java	/^	public Felin(String n, Integer p, String c) {$/;"	m	class:Felin
+Felin	nature/Felin.java	/^public abstract class Felin extends Animal {$/;"	c
+Lion	nature/Lion.java	/^	public Lion(String n, Integer p, String c) {$/;"	m	class:Lion
+Lion	nature/Lion.java	/^public class Lion extends Felin {$/;"	c
+Loup	nature/Loup.java	/^	public Loup(String n, Integer p, String c) {$/;"	m	class:Loup
+Loup	nature/Loup.java	/^public class Loup extends Canin {$/;"	c
+Main	nature/Main.java	/^public class Main {$/;"	c
+Tigre	nature/Tigre.java	/^	public Tigre(String n, Integer p, String c) {$/;"	m	class:Tigre
+Tigre	nature/Tigre.java	/^public class Tigre extends Felin {$/;"	c
+animaux	nature/Main.java	/^	public static void animaux() {$/;"	m	class:Main
+boire	nature/Animal.java	/^	public void boire() {$/;"	m	class:Animal
+context	nature/Main.java	/^	public static void context() {$/;"	m	class:Main
+couleur	nature/Animal.java	/^	private String couleur;$/;"	f	class:Animal	file:
+crier	nature/Animal.java	/^	public void crier() {$/;"	m	class:Animal
+crier	nature/Chat.java	/^	public void crier() {$/;"	m	class:Chat
+crier	nature/Chien.java	/^	public void crier() {$/;"	m	class:Chien
+crier	nature/Lion.java	/^	public void crier() {$/;"	m	class:Lion
+crier	nature/Loup.java	/^	public void crier() {$/;"	m	class:Loup
+crier	nature/Tigre.java	/^	public void crier() {$/;"	m	class:Tigre
+getCouleur	nature/Animal.java	/^	public String getCouleur() {$/;"	m	class:Animal
+getNom	nature/Animal.java	/^	public String getNom() {$/;"	m	class:Animal
+getPoids	nature/Animal.java	/^	public Integer getPoids() {$/;"	m	class:Animal
+main	nature/Main.java	/^	public static void main(String[] args) {$/;"	m	class:Main
+manger	nature/Animal.java	/^	public void manger() {$/;"	m	class:Animal
+nature	nature/Animal.java	/^package nature;$/;"	p
+nature	nature/Canin.java	/^package nature;$/;"	p
+nature	nature/Chat.java	/^package nature;$/;"	p
+nature	nature/Chien.java	/^package nature;$/;"	p
+nature	nature/Felin.java	/^package nature;$/;"	p
+nature	nature/Lion.java	/^package nature;$/;"	p
+nature	nature/Loup.java	/^package nature;$/;"	p
+nature	nature/Main.java	/^package nature;$/;"	p
+nature	nature/Tigre.java	/^package nature;$/;"	p
+nom	nature/Animal.java	/^	private String nom;$/;"	f	class:Animal	file:
+poids	nature/Animal.java	/^	private Integer poids;$/;"	f	class:Animal	file:
+se_deplacer	nature/Animal.java	/^	public void se_deplacer() {$/;"	m	class:Animal
+se_deplacer	nature/Canin.java	/^	public void se_deplacer() {$/;"	m	class:Canin
+se_deplacer	nature/Felin.java	/^	public void se_deplacer() {$/;"	m	class:Felin
+setCouleur	nature/Animal.java	/^	public void setCouleur(String couleur) {$/;"	m	class:Animal
+setNom	nature/Animal.java	/^	public void setNom(String nom) {$/;"	m	class:Animal
+setPoids	nature/Animal.java	/^	public void setPoids(Integer poids) {$/;"	m	class:Animal

@@ -1,0 +1,23 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Chat	IF/Chat.java	/^	public Chat(String nom) {$/;"	m	class:Chat
+Chat	IF/Chat.java	/^public class Chat {$/;"	c
+Couple	couple/Couple.java	/^	public Couple(T first, T second) {$/;"	m	class:Couple
+Couple	couple/Couple.java	/^public class Couple<T> implements Serializable {$/;"	c
+IF	IF/Chat.java	/^package IF;$/;"	p
+Main	Main.java	/^public class Main {$/;"	c
+couple	couple/Couple.java	/^package couple;$/;"	p
+first	couple/Couple.java	/^	private T first, second;$/;"	f	class:Couple	file:
+getFirst	couple/Couple.java	/^	public T getFirst() {$/;"	m	class:Couple
+getNom	IF/Chat.java	/^	public String getNom() {$/;"	m	class:Chat
+getSecond	couple/Couple.java	/^	public T getSecond() {$/;"	m	class:Couple
+main	Main.java	/^	public static void main(String[] args) {$/;"	m	class:Main
+nom	IF/Chat.java	/^	private String nom;$/;"	f	class:Chat	file:
+second	couple/Couple.java	/^	private T first, second;$/;"	f	class:Couple	file:
+setNom	IF/Chat.java	/^	public void setNom(String nom) {$/;"	m	class:Chat
+toString	couple/Couple.java	/^	public String toString() {$/;"	m	class:Couple
+un	Main.java	/^	public static String un = "1";$/;"	f	class:Main

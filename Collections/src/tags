@@ -1,0 +1,26 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Entity	collections/Entity.java	/^	public Entity(String mot) {$/;"	m	class:Entity
+Entity	collections/Entity.java	/^public class Entity {$/;"	c
+ExCollections	collections/ExCollections.java	/^public class ExCollections {$/;"	c
+calculOccurences	collections/Entity.java	/^	private void calculOccurences() {$/;"	m	class:Entity	file:
+collections	collections/Entity.java	/^package collections;$/;"	p
+collections	collections/ExCollections.java	/^package collections;$/;"	p
+etat	collections/Entity.java	/^	public void etat() {$/;"	m	class:Entity
+exercice1Et2	collections/ExCollections.java	/^	private static void exercice1Et2() {$/;"	m	class:ExCollections	file:
+exercice3	collections/ExCollections.java	/^	private static void exercice3() {$/;"	m	class:ExCollections	file:
+exercice4	collections/ExCollections.java	/^	private static void exercice4() {$/;"	m	class:ExCollections	file:
+exercice5	collections/ExCollections.java	/^	private static void exercice5() {$/;"	m	class:ExCollections	file:
+exercice6	collections/ExCollections.java	/^	private static void exercice6() {$/;"	m	class:ExCollections	file:
+exercice7	collections/ExCollections.java	/^	private static void exercice7() {$/;"	m	class:ExCollections	file:
+exercice8	collections/ExCollections.java	/^	private static void exercice8() {$/;"	m	class:ExCollections	file:
+getOccurences	collections/Entity.java	/^	public Map<Character, Integer> getOccurences() {$/;"	m	class:Entity
+initOccurences	collections/Entity.java	/^	private void initOccurences() {$/;"	m	class:Entity	file:
+isAnagramme	collections/Entity.java	/^	public boolean isAnagramme(Entity mot2) {$/;"	m	class:Entity
+main	collections/ExCollections.java	/^	public static void main(String[] args) {$/;"	m	class:ExCollections
+mot	collections/Entity.java	/^	String mot;$/;"	f	class:Entity
+occurences	collections/Entity.java	/^	Map<Character,Integer> occurences;$/;"	f	class:Entity

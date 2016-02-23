@@ -1,0 +1,16 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ExercicesIF	if2/ExercicesIF.java	/^public class ExercicesIF {$/;"	c
+exercice1	if2/ExercicesIF.java	/^	public static void exercice1() {$/;"	m	class:ExercicesIF
+exercice2	if2/ExercicesIF.java	/^	public static void exercice2() {$/;"	m	class:ExercicesIF
+exercice3	if2/ExercicesIF.java	/^	public static void exercice3() {$/;"	m	class:ExercicesIF
+exercice4	if2/ExercicesIF.java	/^	public static void exercice4() {$/;"	m	class:ExercicesIF
+exercice5	if2/ExercicesIF.java	/^	public static void exercice5() {$/;"	m	class:ExercicesIF
+exercice6	if2/ExercicesIF.java	/^	private static void exercice6() {$/;"	m	class:ExercicesIF	file:
+exercice7	if2/ExercicesIF.java	/^	private static void exercice7() {$/;"	m	class:ExercicesIF	file:
+if2	if2/ExercicesIF.java	/^package if2;$/;"	p
+main	if2/ExercicesIF.java	/^	public static void main(String[] args) {$/;"	m	class:ExercicesIF

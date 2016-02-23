@@ -1,0 +1,108 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Carre	Point/Carre.java	/^	public Carre() {$/;"	m	class:Carre
+Carre	Point/Carre.java	/^	public Carre(String cNom,Point cPsh,Integer cCote) {$/;"	m	class:Carre
+Carre	Point/Carre.java	/^public class Carre implements ObjetGraphique<Carre> {$/;"	c
+Cercle	Point/Cercle.java	/^	public Cercle() {$/;"	m	class:Cercle
+Cercle	Point/Cercle.java	/^	public Cercle(String cNom,Point ctr,Integer r) {$/;"	m	class:Cercle
+Cercle	Point/Cercle.java	/^public class Cercle implements ObjetGraphique<Cercle> {$/;"	c
+Main	Point/Main.java	/^public class Main {$/;"	c
+ObjetGraphique	Point/ObjetGraphique.java	/^public interface ObjetGraphique<T> {$/;"	i
+Point	Point/Carre.java	/^package Point;$/;"	p
+Point	Point/Cercle.java	/^package Point;$/;"	p
+Point	Point/Main.java	/^package Point;$/;"	p
+Point	Point/ObjetGraphique.java	/^package Point;$/;"	p
+Point	Point/Point.java	/^	public Point() {$/;"	m	class:Point
+Point	Point/Point.java	/^	public Point(String pnom,Integer px,Integer py) {$/;"	m	class:Point
+Point	Point/Point.java	/^package Point;$/;"	p
+Point	Point/Point.java	/^public class Point implements ObjetGraphique<Point> {$/;"	c
+Point	Point/Rectangle.java	/^package Point;$/;"	p
+Rectangle	Point/Rectangle.java	/^	public Rectangle() {$/;"	m	class:Rectangle
+Rectangle	Point/Rectangle.java	/^	public Rectangle(String string, Point point, Integer longueur2, Integer largeur2) {$/;"	m	class:Rectangle
+Rectangle	Point/Rectangle.java	/^public class Rectangle implements ObjetGraphique<Rectangle> {$/;"	c
+affiche	Point/Carre.java	/^	public void affiche() {$/;"	m	class:Carre
+affiche	Point/Cercle.java	/^	public void affiche() {$/;"	m	class:Cercle
+affiche	Point/ObjetGraphique.java	/^  void affiche();$/;"	m	interface:ObjetGraphique
+affiche	Point/Point.java	/^	public void affiche() {$/;"	m	class:Point
+affiche	Point/Rectangle.java	/^	public void affiche() {$/;"	m	class:Rectangle
+centre	Point/Cercle.java	/^	private Point centre;$/;"	f	class:Cercle	file:
+cote	Point/Carre.java	/^	private Integer cote;$/;"	f	class:Carre	file:
+duplicate	Point/Carre.java	/^	public Carre duplicate(String nom, int dx, int dy) {$/;"	m	class:Carre
+duplicate	Point/Cercle.java	/^	public Cercle duplicate(String dNom, int dx, int dy) {$/;"	m	class:Cercle
+duplicate	Point/ObjetGraphique.java	/^  T duplicate(String nom,int dx,int dy);$/;"	m	interface:ObjetGraphique
+duplicate	Point/Point.java	/^	public Point duplicate(String nNom,int dx, int dy) {$/;"	m	class:Point
+duplicate	Point/Rectangle.java	/^	public Rectangle duplicate(String nom, int dx, int dy) {$/;"	m	class:Rectangle
+getCentre	Point/Cercle.java	/^	public Point getCentre() {$/;"	m	class:Cercle
+getCote	Point/Carre.java	/^	public Integer getCote() {$/;"	m	class:Carre
+getId	Point/Carre.java	/^	public static Integer getId() {$/;"	m	class:Carre
+getId	Point/Rectangle.java	/^	public static Integer getId() {$/;"	m	class:Rectangle
+getLargeur	Point/Rectangle.java	/^	public Integer getLargeur() {$/;"	m	class:Rectangle
+getLongueur	Point/Rectangle.java	/^	public Integer getLongueur() {$/;"	m	class:Rectangle
+getNom	Point/Carre.java	/^	public String getNom() {$/;"	m	class:Carre
+getNom	Point/Cercle.java	/^	public String getNom() {$/;"	m	class:Cercle
+getNom	Point/Point.java	/^	public String getNom() {$/;"	m	class:Point
+getNom	Point/Rectangle.java	/^	public String getNom() {$/;"	m	class:Rectangle
+getPsh	Point/Carre.java	/^	public Point getPsh() {$/;"	m	class:Carre
+getPsh	Point/Rectangle.java	/^	public Point getPsh() {$/;"	m	class:Rectangle
+getRayon	Point/Cercle.java	/^	public Integer getRayon() {$/;"	m	class:Cercle
+getX	Point/Point.java	/^	public Integer getX() {$/;"	m	class:Point
+getY	Point/Point.java	/^	public Integer getY() {$/;"	m	class:Point
+id	Point/Carre.java	/^	private static Integer id = 0;$/;"	f	class:Carre	file:
+id	Point/Cercle.java	/^	private	static Integer id = 0;$/;"	f	class:Cercle	file:
+id	Point/Point.java	/^	public static Integer id = 0;$/;"	f	class:Point
+id	Point/Rectangle.java	/^	private static Integer id = 0;$/;"	f	class:Rectangle	file:
+largeur	Point/Rectangle.java	/^	private Integer largeur;$/;"	f	class:Rectangle	file:
+longueur	Point/Rectangle.java	/^	private Integer longueur;$/;"	f	class:Rectangle	file:
+main	Point/Main.java	/^	public static void main(String [] args) {$/;"	m	class:Main
+nom	Point/Carre.java	/^	private String nom;$/;"	f	class:Carre	file:
+nom	Point/Cercle.java	/^	private	String nom;$/;"	f	class:Cercle	file:
+nom	Point/Point.java	/^	public String nom;$/;"	f	class:Point
+nom	Point/Rectangle.java	/^	private String nom;$/;"	f	class:Rectangle	file:
+psh	Point/Carre.java	/^	private Point psh;$/;"	f	class:Carre	file:
+psh	Point/Rectangle.java	/^	private Point psh;$/;"	f	class:Rectangle	file:
+rayon	Point/Cercle.java	/^	private	Integer rayon;$/;"	f	class:Cercle	file:
+setCentre	Point/Cercle.java	/^	public void setCentre(Point centre) {$/;"	m	class:Cercle
+setCote	Point/Carre.java	/^	public void setCote(Integer cote) {$/;"	m	class:Carre
+setId	Point/Carre.java	/^	public static void setId(Integer id) {$/;"	m	class:Carre
+setId	Point/Rectangle.java	/^	public static void setId(Integer id) {$/;"	m	class:Rectangle
+setLargeur	Point/Rectangle.java	/^	public void setLargeur(Integer largeur) {$/;"	m	class:Rectangle
+setLongueur	Point/Rectangle.java	/^	public void setLongueur(Integer longueur) {$/;"	m	class:Rectangle
+setNom	Point/Carre.java	/^	public void setNom(String nom) {$/;"	m	class:Carre
+setNom	Point/Cercle.java	/^	public void setNom(String nom) {$/;"	m	class:Cercle
+setNom	Point/Point.java	/^	public void setNom(String nom) {$/;"	m	class:Point
+setNom	Point/Rectangle.java	/^	public void setNom(String nom) {$/;"	m	class:Rectangle
+setPsh	Point/Carre.java	/^	public void setPsh(Point psh) {$/;"	m	class:Carre
+setPsh	Point/Rectangle.java	/^	public void setPsh(Point psh) {$/;"	m	class:Rectangle
+setRayon	Point/Cercle.java	/^	public void setRayon(Integer rayon) {$/;"	m	class:Cercle
+setX	Point/Point.java	/^	public void setX(Integer x) {$/;"	m	class:Point
+setY	Point/Point.java	/^	public void setY(Integer y) {$/;"	m	class:Point
+symO	Point/Carre.java	/^	public void symO() {$/;"	m	class:Carre
+symO	Point/Cercle.java	/^	public void symO() {$/;"	m	class:Cercle
+symO	Point/ObjetGraphique.java	/^  void symO();$/;"	m	interface:ObjetGraphique
+symO	Point/Point.java	/^	public void symO() {$/;"	m	class:Point
+symO	Point/Rectangle.java	/^	public void symO() {$/;"	m	class:Rectangle
+symX	Point/Carre.java	/^	public void symX() {$/;"	m	class:Carre
+symX	Point/Cercle.java	/^	public void symX() {$/;"	m	class:Cercle
+symX	Point/ObjetGraphique.java	/^  void symX();$/;"	m	interface:ObjetGraphique
+symX	Point/Point.java	/^	public void symX() {$/;"	m	class:Point
+symX	Point/Rectangle.java	/^	public void symX() {$/;"	m	class:Rectangle
+symY	Point/Carre.java	/^	public void symY() {$/;"	m	class:Carre
+symY	Point/Cercle.java	/^	public void symY() {$/;"	m	class:Cercle
+symY	Point/ObjetGraphique.java	/^  void symY();$/;"	m	interface:ObjetGraphique
+symY	Point/Point.java	/^	public void symY() {$/;"	m	class:Point
+symY	Point/Rectangle.java	/^	public void symY() {$/;"	m	class:Rectangle
+testCarre	Point/Main.java	/^	private static void testCarre() {$/;"	m	class:Main	file:
+testCercle	Point/Main.java	/^	public static void testCercle() {$/;"	m	class:Main
+testPoint	Point/Main.java	/^	public static void testPoint() {$/;"	m	class:Main
+testRectangle	Point/Main.java	/^	private static void testRectangle() {$/;"	m	class:Main	file:
+translate	Point/Carre.java	/^	public void translate(int tx, int ty) {$/;"	m	class:Carre
+translate	Point/Cercle.java	/^	public void translate(int tx, int ty) {$/;"	m	class:Cercle
+translate	Point/ObjetGraphique.java	/^  void translate(int tx,int ty);$/;"	m	interface:ObjetGraphique
+translate	Point/Point.java	/^	public void translate(int tx, int ty) {$/;"	m	class:Point
+translate	Point/Rectangle.java	/^	public void translate(int tx, int ty) {$/;"	m	class:Rectangle
+x	Point/Point.java	/^	public Integer x;$/;"	f	class:Point
+y	Point/Point.java	/^	public Integer y;$/;"	f	class:Point
