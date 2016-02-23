@@ -11,6 +11,7 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
+import java.util.function.BiPredicate;
 import java.util.function.Function;
 
 public class ExCollections {
@@ -38,9 +39,40 @@ public class ExCollections {
 
 	private static void exercice6() {
 		List<String> words = Arrays.asList("virer","tri","rit","meurs","voir","tir","river","muser");
+		Comparator<String> cmpTailleStr = (s1,s2) -> s1.length() - s2.length();
+		BiPredicate<Entity,Entity> cmpOcc = (e1,e2) -> e1.isAnagramme(e2);
+		BiConsumer<String, SortedMap<String, SortedMap<String, Entity>>> ajoutEntity = (s, m) -> {
+			String cle1 = new Entity(s).getOccurences().toString(), cle2 = s;
+			if (m.containsKey(cle1)) {
+				m.get(cle1).put(s,new Entity(s));
+			}
+			else {
+				SortedMap<String,Entity> a = new TreeMap<>();
+				a.put(s,new Entity(s));
+				m.put(cle1,a);
+			}
+		};
+		BiConsumer<List<String>, SortedMap<String, SortedMap<String, Entity>>> ajoutListEntity = (l,m) -> l.forEach(s -> ajoutEntity.accept(s,m));
+		SortedMap<String, SortedMap<String, Entity>> entities = new TreeMap<>();
+		ajoutListEntity.accept(words,entities);
+		System.out.println("essai en version longue");
+		entities.forEach((s,m) -> System.out.format("%s -> %s\n",s,m.keySet()));
 
+
+			
+
+			/*m.computeIfAbsent(
+					new Entity(s).getOccurences().toString(),new TreeMap<String,Entity>().put(s,new Entity(s))
+					);*/
+		//Map<String,Liste<Entity>> a = new TreeMap<>();
 		
-
+		
+		//classement par taille
+		//comparaison des occurences
+		//peut on faire des maps d'occurences? oui il suffit de faire un toString d'un TreeMap
+		//cmp(e1,e2) -> si e1 n'existe pas -> ajouter e1 -> si different -> si meme taille -> si meme occurences -> ajouter au Map<occ,List<String>>
+		//ajout(e) -> si e n'existe pas -> ajouter e dans son bac occ
+		
 	}
 
 	private static void exercice5() {
