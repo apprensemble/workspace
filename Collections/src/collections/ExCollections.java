@@ -7,6 +7,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.function.BiConsumer;
@@ -39,8 +40,9 @@ public class ExCollections {
 
 	private static void exercice6() {
 		List<String> words = Arrays.asList("virer","tri","rit","meurs","voir","tir","river","muser");
-		Comparator<String> cmpTailleStr = (s1,s2) -> s1.length() - s2.length();
-		BiPredicate<Entity,Entity> cmpOcc = (e1,e2) -> e1.isAnagramme(e2);
+		//Comparator<String> cmpTailleStr = (s1,s2) -> s1.length() - s2.length();
+		//BiPredicate<Entity,Entity> cmpOcc = (e1,e2) -> e1.isAnagramme(e2);
+		/*
 		BiConsumer<String, SortedMap<String, SortedMap<String, Entity>>> ajoutEntity = (s, m) -> {
 			String cle1 = new Entity(s).getOccurences().toString(), cle2 = s;
 			if (m.containsKey(cle1)) {
@@ -52,10 +54,25 @@ public class ExCollections {
 				m.put(cle1,a);
 			}
 		};
+		*/
+		BiConsumer<String,SortedMap<String, SortedMap<String, Entity>>> ajoutEntity = (s,m) -> {
+			String cle1 = new Entity(s).getOccurences().toString();
+			SortedMap<String, Entity> a = Optional.ofNullable(m.get(cle1)).orElse(new TreeMap<String,Entity>());
+			a.put(s,new Entity(s));
+			m.put(cle1,a);
+		};
 		BiConsumer<List<String>, SortedMap<String, SortedMap<String, Entity>>> ajoutListEntity = (l,m) -> l.forEach(s -> ajoutEntity.accept(s,m));
 		SortedMap<String, SortedMap<String, Entity>> entities = new TreeMap<>();
 		ajoutListEntity.accept(words,entities);
 		System.out.println("essai en version longue");
+		entities.forEach((s,m) -> System.out.format("%s -> %s\n",s,m.keySet()));
+		System.out.println("test des ajouts");
+		List<String> betises = Arrays.asList("cirer","caroline","crocodile","rivo");
+		ajoutListEntity.accept(betises,entities);
+		entities.forEach((s,m) -> System.out.format("%s -> %s\n",s,m.keySet()));
+		System.out.println("test des doublons");
+		List<String> words2 = Arrays.asList("virer","tri","rit","meurs","voir","tir","river","muser");
+		ajoutListEntity.accept(words2,entities);
 		entities.forEach((s,m) -> System.out.format("%s -> %s\n",s,m.keySet()));
 
 
