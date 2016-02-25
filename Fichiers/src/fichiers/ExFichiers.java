@@ -6,14 +6,20 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.SortedMap;
 import java.util.StringJoiner;
+import java.util.TreeMap;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import outils.Pres;
-import collections.Entity;
 
 public class ExFichiers {
 	private static Path ficLstStr = Paths.get("src/res","fichierStr.txt");
@@ -89,11 +95,54 @@ public class ExFichiers {
 
 
 	}
+	public static void exercice4() {
+		Pres.titre("exercice4");
+		//deux maniere de capture les elements dans un fichier :
+		//1 - ligne par ligne puis on split
+		//2 - caractere par caractere avec des conditions
+		Path source = Paths.get("src/ressources/varNombre.txt");
+		SortedMap<String,Integer> cible = new TreeMap<>();
+		Function<String,Optional<List<String>>> splitForMap = s -> {
+			List<String> lst = Collections.emptyList();
+	String[] cv = s.split("=");
+	Pattern str = Pattern.compile("(\\S+)");
+	Pattern nbr = Pattern.compile(".(\\d+)");
+	Matcher mStr = str.matcher(cv[0]);
+	Matcher mNbr = nbr.matcher(cv[1]);
+	if (mNbr.matches() && mStr.matches()) {
+		String vNbr = mNbr.group(1);
+		String vStr = mStr.group(1);
+		 lst = Arrays.asList(vStr,vNbr);
+	}
+	else {
+		System.out.println("aucun matches pour "+cv[1]);
+	}
+	return Optional.ofNullable(lst);
+		};
+		BiConsumer<String,SortedMap<String,Integer>> strToMap = (s,m) -> {
+			Optional<List<String>> opLst;
+			opLst = splitForMap.apply(s);
+		m.put(opLst.get().get(0),Integer.valueOf(opLst.get().get(1)));
+	//m.put(cv[0],Integer.valueOf(cv[1]));
+		};
+		try {
+			Files.readAllLines(source,StandardCharsets.UTF_8).forEach(l -> strToMap.accept(l,cible));
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		System.out.println(cible);
+		
+		
+		
+	
+	}
 	public static void main(String[] args) {
 		Pres.titre("Les Fichiers");
 		net();
 		exercice1();
 		exercice2();
 		exercice3();
+		exercice4();
 	}
 }

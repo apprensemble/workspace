@@ -1,0 +1,7 @@
+souris = 2
+ecran = 2
+clavier = 1
+portable = 2
+batterie = 2
+chargeur = 1
+carte wifi = 0
