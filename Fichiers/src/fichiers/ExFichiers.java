@@ -104,26 +104,27 @@ public class ExFichiers {
 		SortedMap<String,Integer> cible = new TreeMap<>();
 		Function<String,Optional<List<String>>> splitForMap = s -> {
 			List<String> lst = Collections.emptyList();
-	String[] cv = s.split("=");
-	Pattern str = Pattern.compile("(\\S+)");
-	Pattern nbr = Pattern.compile(".(\\d+)");
-	Matcher mStr = str.matcher(cv[0]);
-	Matcher mNbr = nbr.matcher(cv[1]);
-	if (mNbr.matches() && mStr.matches()) {
-		String vNbr = mNbr.group(1);
-		String vStr = mStr.group(1);
-		 lst = Arrays.asList(vStr,vNbr);
-	}
-	else {
-		System.out.println("aucun matches pour "+cv[1]);
-	}
-	return Optional.ofNullable(lst);
+			String[] cv = s.split("=");
+			Pattern str = Pattern.compile("(\\S+)\\s+");
+			Pattern nbr = Pattern.compile(".(\\d+)");
+			Matcher mStr = str.matcher(cv[0]);
+			Matcher mNbr = nbr.matcher(cv[1]);
+			if (mNbr.matches() && mStr.matches()) {
+				String vNbr = mNbr.group(1);
+				String vStr = mStr.group(1);
+				lst = Arrays.asList(vStr,vNbr);
+				return Optional.ofNullable(lst);
+			}
+			else {
+				System.out.format("aucun matches pour %s -> %s\n",cv[0],cv[1]);
+				return Optional.empty();
+			}
 		};
 		BiConsumer<String,SortedMap<String,Integer>> strToMap = (s,m) -> {
 			Optional<List<String>> opLst;
 			opLst = splitForMap.apply(s);
-		m.put(opLst.get().get(0),Integer.valueOf(opLst.get().get(1)));
-	//m.put(cv[0],Integer.valueOf(cv[1]));
+			opLst.ifPresent(l -> m.put(l.get(0),Integer.valueOf(l.get(1))));
+			//m.put(cv[0],Integer.valueOf(cv[1]));
 		};
 		try {
 			Files.readAllLines(source,StandardCharsets.UTF_8).forEach(l -> strToMap.accept(l,cible));
@@ -132,10 +133,10 @@ public class ExFichiers {
 			e.printStackTrace();
 		}
 		System.out.println(cible);
-		
-		
-		
-	
+
+
+
+
 	}
 	public static void main(String[] args) {
 		Pres.titre("Les Fichiers");
