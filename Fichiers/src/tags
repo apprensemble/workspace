@@ -6,7 +6,17 @@
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 ExFichiers	fichiers/ExFichiers.java	/^public class ExFichiers {$/;"	c
 Pres	outils/Pres.java	/^public class Pres {$/;"	c
+cmpStr	fichiers/ExFichiers.java	/^		private static Comparator<String> cmpStr = (v1,v2) -> v1.compareTo(v2);$/;"	f	class:ExFichiers	file:
+exercice1	fichiers/ExFichiers.java	/^	private static void exercice1() {$/;"	m	class:ExFichiers	file:
+exercice2	fichiers/ExFichiers.java	/^	private static void exercice2() {$/;"	m	class:ExFichiers	file:
+ficLstStr	fichiers/ExFichiers.java	/^		private static Path ficLstStr = Paths.get("src\/res","fichierStr.txt");$/;"	f	class:ExFichiers	file:
+fichierExiste	fichiers/ExFichiers.java	/^		private static Consumer<Path> fichierExiste = f -> System.out.println(Files.exists(f) ? f+" existe" : f+" n'existe pas"); $/;"	f	class:ExFichiers	file:
 fichiers	fichiers/ExFichiers.java	/^package fichiers;$/;"	p
+image	fichiers/ExFichiers.java	/^		private static Path image = Paths.get("src\/ressources\/boot_menu_w.png");$/;"	f	class:ExFichiers	file:
+l	fichiers/ExFichiers.java	/^		private static List<String> l = Arrays.asList("un","deux","trois","soleil");$/;"	f	class:ExFichiers	file:
+lr	fichiers/ExFichiers.java	/^		private static Optional<List<String>> lr;$/;"	f	class:ExFichiers	file:
 main	fichiers/ExFichiers.java	/^	public static void main(String[] args) {$/;"	m	class:ExFichiers
+net	fichiers/ExFichiers.java	/^		private static void net() {$/;"	m	class:ExFichiers	file:
 outils	outils/Pres.java	/^package outils;$/;"	p
+res	fichiers/ExFichiers.java	/^		private static Path res = Paths.get("src\/res\/nimage.png");$/;"	f	class:ExFichiers	file:
 titre	outils/Pres.java	/^	public static void titre(String titre) {$/;"	m	class:Pres

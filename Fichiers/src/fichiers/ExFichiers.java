@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.StringJoiner;
 import java.util.function.Consumer;
 
 import outils.Pres;
@@ -65,10 +66,17 @@ public class ExFichiers {
 		catch (IOException e) {
 		
 		}
+			StringJoiner sj = new StringJoiner("<=");
+			StringJoiner sj2 = new StringJoiner("<=");
 		lr.ifPresent(l -> {
 			l.sort(cmpStr);
-			System.out.println(l);
+			l.forEach(f -> sj.add(f));
+			System.out.println(sj);
 		});
+		Pres.titre("pour l'exemple");
+		lr.get().stream().forEachOrdered(f -> sj2.add(f));
+			System.out.println(sj2);
+
 		//lr.ifPresent(l -> System.out.println(l));
 
 	}
