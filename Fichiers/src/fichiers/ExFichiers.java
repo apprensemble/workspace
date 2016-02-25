@@ -13,27 +13,28 @@ import java.util.StringJoiner;
 import java.util.function.Consumer;
 
 import outils.Pres;
+import collections.Entity;
 
 public class ExFichiers {
-		private static Path ficLstStr = Paths.get("src/res","fichierStr.txt");
-		private static List<String> l = Arrays.asList("un","deux","trois","soleil");
-		private static Path image = Paths.get("src/ressources/boot_menu_w.png");
-		private static Path res = Paths.get("src/res/nimage.png");
-		private static Consumer<Path> fichierExiste = f -> System.out.println(Files.exists(f) ? f+" existe" : f+" n'existe pas"); 
-		private static Comparator<String> cmpStr = (v1,v2) -> v1.compareTo(v2);
-		private static Optional<List<String>> lr;
+	private static Path ficLstStr = Paths.get("src/res","fichierStr.txt");
+	private static List<String> l = Arrays.asList("un","deux","trois","soleil","tri","tir");
+	private static Path image = Paths.get("src/ressources/boot_menu_w.png");
+	private static Path res = Paths.get("src/res/nimage.png");
+	private static Consumer<Path> fichierExiste = f -> System.out.println(Files.exists(f) ? f+" existe" : f+" n'existe pas"); 
+	private static Comparator<String> cmpStr = (v1,v2) -> v1.compareTo(v2);
+	private static Optional<List<String>> lr;
 
-		private static void net() {
-			fichierExiste.accept(res);
-			try {
+	private static void net() {
+		fichierExiste.accept(res);
+		try {
 			Files.deleteIfExists(ficLstStr);
 			Files.deleteIfExists(res);
 			Files.deleteIfExists(res.getParent());
-			}
-			catch (IOException e) {
-				e.printStackTrace();
-			}
 		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	private static void exercice1() {
 		try {
 			Files.createDirectory(res.getParent());
@@ -53,6 +54,7 @@ public class ExFichiers {
 		}
 	}
 	private static void exercice2() {
+		Pres.titre("Exercice 2");
 		//creation via Path mais on peut aussi faire un File
 		try {
 			Files.write(ficLstStr,l, StandardCharsets.UTF_8, StandardOpenOption.CREATE_NEW);
@@ -64,10 +66,10 @@ public class ExFichiers {
 			lr = Optional.ofNullable(Files.readAllLines(ficLstStr,StandardCharsets.UTF_8));
 		}
 		catch (IOException e) {
-		
+
 		}
-			StringJoiner sj = new StringJoiner("<=");
-			StringJoiner sj2 = new StringJoiner("<=");
+		StringJoiner sj = new StringJoiner("<=");
+		StringJoiner sj2 = new StringJoiner("<=");
 		lr.ifPresent(l -> {
 			l.sort(cmpStr);
 			l.forEach(f -> sj.add(f));
@@ -75,9 +77,16 @@ public class ExFichiers {
 		});
 		Pres.titre("pour l'exemple");
 		lr.get().stream().forEachOrdered(f -> sj2.add(f));
-			System.out.println(sj2);
+		System.out.println(sj2);
 
-		//lr.ifPresent(l -> System.out.println(l));
+		//question : pourquoi SringJoiner plutot qu'un join?
+
+	}
+	private static void exercice3() {
+		Pres.titre("Exercice 3");
+		LecteurFichier lf = new LecteurFichier(ficLstStr);
+		lf.lecture();
+
 
 	}
 	public static void main(String[] args) {
@@ -85,5 +94,6 @@ public class ExFichiers {
 		net();
 		exercice1();
 		exercice2();
+		exercice3();
 	}
 }
