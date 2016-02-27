@@ -1,0 +1,36 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+City	json/City.java	/^	public City() {$/;"	m	class:City
+City	json/City.java	/^	public City(String name, Integer nbr) {$/;"	m	class:City
+City	json/City.java	/^public class City {$/;"	c
+CityList	json/CityList.java	/^	public CityList() {$/;"	m	class:CityList
+CityList	json/CityList.java	/^	public CityList(ArrayList<City> cityList) {$/;"	m	class:CityList
+CityList	json/CityList.java	/^public class CityList {$/;"	c
+ExJson	json/ExJson.java	/^public class ExJson {$/;"	c
+add	json/CityList.java	/^	public void add(City city) {$/;"	m	class:CityList
+addAll	json/CityList.java	/^	public void addAll(ArrayList<City> manyCity) {$/;"	m	class:CityList
+city	json/ExJson.java	/^	private static Path city = Paths.get("res","city.json");$/;"	f	class:ExJson	file:
+cityList	json/CityList.java	/^	private ArrayList<City> cityList;$/;"	f	class:CityList	file:
+exercice1	json/ExJson.java	/^	private static void exercice1() {$/;"	m	class:ExJson	file:
+exercice2	json/ExJson.java	/^	private static void exercice2() {$/;"	m	class:ExJson	file:
+exercice3	json/ExJson.java	/^	private static void exercice3() {$/;"	m	class:ExJson	file:
+exercice4	json/ExJson.java	/^	private static void exercice4() {$/;"	m	class:ExJson	file:
+fCity	json/ExJson.java	/^	private static File fCity = city.toFile();$/;"	f	class:ExJson	file:
+fListCity	json/ExJson.java	/^	private static File fListCity = listCity.toFile();$/;"	f	class:ExJson	file:
+getCityList	json/CityList.java	/^	public ArrayList<City> getCityList() {$/;"	m	class:CityList
+getName	json/City.java	/^	public String getName() {$/;"	m	class:City
+getNbr	json/City.java	/^	public Integer getNbr() {$/;"	m	class:City
+json	json/City.java	/^package json;$/;"	p
+json	json/CityList.java	/^package json;$/;"	p
+json	json/ExJson.java	/^package json;$/;"	p
+listCity	json/ExJson.java	/^	private static Path listCity = Paths.get("res","listCity.json");$/;"	f	class:ExJson	file:
+main	json/ExJson.java	/^	public static void main(String[] args) {$/;"	m	class:ExJson
+name	json/City.java	/^	private String name;$/;"	f	class:City	file:
+nbr	json/City.java	/^	private Integer nbr;$/;"	f	class:City	file:
+setCityList	json/CityList.java	/^	public void setCityList(ArrayList<City> cityList) {$/;"	m	class:CityList
+setName	json/City.java	/^	public void setName(String name) {$/;"	m	class:City
+setNbr	json/City.java	/^	public void setNbr(Integer nbr) {$/;"	m	class:City

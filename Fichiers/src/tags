@@ -5,18 +5,36 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 ExFichiers	fichiers/ExFichiers.java	/^public class ExFichiers {$/;"	c
+LecteurFichier	fichiers/LecteurFichier.java	/^	public LecteurFichier(Path nomFichier) {$/;"	m	class:LecteurFichier
+LecteurFichier	fichiers/LecteurFichier.java	/^	public LecteurFichier(String nomFichier) {$/;"	m	class:LecteurFichier
+LecteurFichier	fichiers/LecteurFichier.java	/^public class LecteurFichier {$/;"	c
 Pres	outils/Pres.java	/^public class Pres {$/;"	c
-cmpStr	fichiers/ExFichiers.java	/^		private static Comparator<String> cmpStr = (v1,v2) -> v1.compareTo(v2);$/;"	f	class:ExFichiers	file:
+affiche	fichiers/LecteurFichier.java	/^	public void affiche() {$/;"	m	class:LecteurFichier
+ajoutEntity	fichiers/LecteurFichier.java	/^	private BiConsumer<String,SortedMap<String, SortedMap<String, Entity>>> ajoutEntity = (s,m) -> {$/;"	f	class:LecteurFichier	file:
+ajoutListEntity	fichiers/LecteurFichier.java	/^		private BiConsumer<List<String>, SortedMap<String, SortedMap<String, Entity>>> ajoutListEntity = (l,m) -> l.forEach(s -> ajoutEntity.accept(s,m));$/;"	f	class:LecteurFichier	file:
+cmpStr	fichiers/ExFichiers.java	/^	private static Comparator<String> cmpStr = (v1,v2) -> v1.compareTo(v2);$/;"	f	class:ExFichiers	file:
 exercice1	fichiers/ExFichiers.java	/^	private static void exercice1() {$/;"	m	class:ExFichiers	file:
 exercice2	fichiers/ExFichiers.java	/^	private static void exercice2() {$/;"	m	class:ExFichiers	file:
-ficLstStr	fichiers/ExFichiers.java	/^		private static Path ficLstStr = Paths.get("src\/res","fichierStr.txt");$/;"	f	class:ExFichiers	file:
-fichierExiste	fichiers/ExFichiers.java	/^		private static Consumer<Path> fichierExiste = f -> System.out.println(Files.exists(f) ? f+" existe" : f+" n'existe pas"); $/;"	f	class:ExFichiers	file:
+exercice3	fichiers/ExFichiers.java	/^	private static void exercice3() {$/;"	m	class:ExFichiers	file:
+exercice4	fichiers/ExFichiers.java	/^	public static void exercice4() {$/;"	m	class:ExFichiers
+exercice4Bis	fichiers/ExFichiers.java	/^	public static void exercice4Bis() {$/;"	m	class:ExFichiers
+exercice5	fichiers/ExFichiers.java	/^	public static void exercice5() {$/;"	m	class:ExFichiers
+exercice6	fichiers/ExFichiers.java	/^	public static void exercice6()  {$/;"	m	class:ExFichiers
+ficLstStr	fichiers/ExFichiers.java	/^	private static Path ficLstStr = Paths.get("src\/res","fichierStr.txt");$/;"	f	class:ExFichiers	file:
+fichier	fichiers/LecteurFichier.java	/^	private Path fichier;$/;"	f	class:LecteurFichier	file:
+fichierExiste	fichiers/ExFichiers.java	/^	private static Consumer<Path> fichierExiste = f -> System.out.println(Files.exists(f) ? f+" existe" : f+" n'existe pas"); $/;"	f	class:ExFichiers	file:
 fichiers	fichiers/ExFichiers.java	/^package fichiers;$/;"	p
-image	fichiers/ExFichiers.java	/^		private static Path image = Paths.get("src\/ressources\/boot_menu_w.png");$/;"	f	class:ExFichiers	file:
-l	fichiers/ExFichiers.java	/^		private static List<String> l = Arrays.asList("un","deux","trois","soleil");$/;"	f	class:ExFichiers	file:
-lr	fichiers/ExFichiers.java	/^		private static Optional<List<String>> lr;$/;"	f	class:ExFichiers	file:
+fichiers	fichiers/LecteurFichier.java	/^package fichiers;$/;"	p
+image	fichiers/ExFichiers.java	/^	private static Path image = Paths.get("src\/ressources\/boot_menu_w.png");$/;"	f	class:ExFichiers	file:
+l	fichiers/ExFichiers.java	/^	private static List<String> l = Arrays.asList("un","deux","trois","soleil","tri","tir");$/;"	f	class:ExFichiers	file:
+lecture	fichiers/LecteurFichier.java	/^	public void lecture() {$/;"	m	class:LecteurFichier
+lr	fichiers/ExFichiers.java	/^	private static Optional<List<String>> lr;$/;"	f	class:ExFichiers	file:
 main	fichiers/ExFichiers.java	/^	public static void main(String[] args) {$/;"	m	class:ExFichiers
-net	fichiers/ExFichiers.java	/^		private static void net() {$/;"	m	class:ExFichiers	file:
+mots	fichiers/LecteurFichier.java	/^	private SortedMap<String, SortedMap<String,Entity>> mots;$/;"	f	class:LecteurFichier	file:
+net	fichiers/ExFichiers.java	/^	private static void net() {$/;"	m	class:ExFichiers	file:
+nomFichier	fichiers/LecteurFichier.java	/^	private String nomFichier;$/;"	f	class:LecteurFichier	file:
+objetCouple	fichiers/ExFichiers.java	/^	private static Path objetCouple = Paths.get("src\/ressources\/objetCouple.dat");$/;"	f	class:ExFichiers	file:
 outils	outils/Pres.java	/^package outils;$/;"	p
-res	fichiers/ExFichiers.java	/^		private static Path res = Paths.get("src\/res\/nimage.png");$/;"	f	class:ExFichiers	file:
+res	fichiers/ExFichiers.java	/^	private static Path res = Paths.get("src\/res\/nimage.png");$/;"	f	class:ExFichiers	file:
+source	fichiers/ExFichiers.java	/^	private static Path source = Paths.get("src\/ressources\/varNombre.txt");$/;"	f	class:ExFichiers	file:
 titre	outils/Pres.java	/^	public static void titre(String titre) {$/;"	m	class:Pres
