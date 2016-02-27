@@ -19,6 +19,8 @@ exercice1	json/ExJson.java	/^	private static void exercice1() {$/;"	m	class:ExJs
 exercice2	json/ExJson.java	/^	private static void exercice2() {$/;"	m	class:ExJson	file:
 exercice3	json/ExJson.java	/^	private static void exercice3() {$/;"	m	class:ExJson	file:
 exercice4	json/ExJson.java	/^	private static void exercice4() {$/;"	m	class:ExJson	file:
+exercice4Bis	json/ExJson.java	/^	private static void exercice4Bis() {$/;"	m	class:ExJson	file:
+exercice5	json/ExJson.java	/^	private static void exercice5() {$/;"	m	class:ExJson	file:
 fCity	json/ExJson.java	/^	private static File fCity = city.toFile();$/;"	f	class:ExJson	file:
 fListCity	json/ExJson.java	/^	private static File fListCity = listCity.toFile();$/;"	f	class:ExJson	file:
 getCityList	json/CityList.java	/^	public ArrayList<City> getCityList() {$/;"	m	class:CityList
