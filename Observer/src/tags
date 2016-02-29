@@ -7,15 +7,26 @@
 ExObserver	observable/ExObserver.java	/^public class ExObserver {$/;"	c
 PremierEssai	observable/PremierEssai.java	/^	public PremierEssai() {$/;"	m	class:PremierEssai
 PremierEssai	observable/PremierEssai.java	/^public class PremierEssai {$/;"	c
+Sensor	sensor/Sensor.java	/^	public Sensor(long delay) {$/;"	m	class:Sensor
+Sensor	sensor/Sensor.java	/^	public Sensor(long delay, String name) {$/;"	m	class:Sensor
 Sensor	sensor/Sensor.java	/^public class Sensor {$/;"	c
+SensorTask	sensor/Sensor.java	/^	private class SensorTask extends TimerTask {$/;"	c	class:Sensor
 exercice1	observable/ExObserver.java	/^	private static void exercice1() {$/;"	m	class:ExObserver	file:
 exercice1Bis	observable/ExObserver.java	/^	private static void exercice1Bis() {$/;"	m	class:ExObserver	file:
 exercice2	observable/ExObserver.java	/^	private static void exercice2() {$/;"	m	class:ExObserver	file:
+exercice3	observable/ExObserver.java	/^	private static void exercice3() {$/;"	m	class:ExObserver	file:
+getValue	sensor/Sensor.java	/^	public IntegerProperty getValue() {$/;"	m	class:Sensor
 main	observable/ExObserver.java	/^	public static void main(String[] args) {$/;"	m	class:ExObserver
+name	sensor/Sensor.java	/^	private String name;$/;"	f	class:Sensor	file:
 nom	observable/PremierEssai.java	/^	StringProperty nom;$/;"	f	class:PremierEssai
 nomProperty	observable/PremierEssai.java	/^	public StringProperty nomProperty() {$/;"	m	class:PremierEssai
 nomProperty	observable/PremierEssai.java	/^	public void nomProperty(String valeur) {$/;"	m	class:PremierEssai
 observable	observable/ExObserver.java	/^package observable;$/;"	p
 observable	observable/PremierEssai.java	/^package observable;$/;"	p
+r	sensor/Sensor.java	/^	private Random r;$/;"	f	class:Sensor	file:
+read	sensor/Sensor.java	/^	public void read() {$/;"	m	class:Sensor
+run	sensor/Sensor.java	/^		public void run() {$/;"	m	class:Sensor.SensorTask
 sensor	sensor/Sensor.java	/^package sensor;$/;"	p
+startTimer	sensor/Sensor.java	/^	public void startTimer(long delay) {$/;"	m	class:Sensor
+value	sensor/Sensor.java	/^	private IntegerProperty value;$/;"	f	class:Sensor	file:
 villes	observable/ExObserver.java	/^	private static Path villes = Paths.get("res","villes.txt");$/;"	f	class:ExObserver	file:

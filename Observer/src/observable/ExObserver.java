@@ -17,6 +17,8 @@ import javafx.collections.SetChangeListener;
 
 import json.City;
 
+import sensor.Sensor;
+
 public class ExObserver {
 	private static Path villes = Paths.get("res","villes.txt");
 	private static void exercice1() {
@@ -75,10 +77,16 @@ public class ExObserver {
 			e.printStackTrace();
 		}
 	}
+	private static void exercice3() {
+		//l'exercice 3 consiste a construire la classe Sensor et ajouter le calcul d'une valeur de temperature lisible
+		Sensor s = new Sensor(3000);
+		s.getValue().addListener((o,v,nv) -> System.out.format("temp : %s\n",nv));
+	}
 	public static void main(String[] args) {
 		exercice1();
 		exercice1Bis();
 		exercice2();
+//		exercice3();
 	}
 
 }
