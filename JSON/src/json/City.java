@@ -46,4 +46,8 @@ public class City {
 	public void setNbr(Integer nbr) {
 		this.nbr = nbr;
 	}
+	public String toString() {
+		String nNbr = String.valueOf(nbr);
+		return name+" "+nNbr;
+	}
 }

@@ -7,10 +7,15 @@
 ExObserver	observable/ExObserver.java	/^public class ExObserver {$/;"	c
 PremierEssai	observable/PremierEssai.java	/^	public PremierEssai() {$/;"	m	class:PremierEssai
 PremierEssai	observable/PremierEssai.java	/^public class PremierEssai {$/;"	c
-exercice1	observable/ExObserver.java	/^	public static void exercice1() {$/;"	m	class:ExObserver
+Sensor	sensor/Sensor.java	/^public class Sensor {$/;"	c
+exercice1	observable/ExObserver.java	/^	private static void exercice1() {$/;"	m	class:ExObserver	file:
+exercice1Bis	observable/ExObserver.java	/^	private static void exercice1Bis() {$/;"	m	class:ExObserver	file:
+exercice2	observable/ExObserver.java	/^	private static void exercice2() {$/;"	m	class:ExObserver	file:
 main	observable/ExObserver.java	/^	public static void main(String[] args) {$/;"	m	class:ExObserver
 nom	observable/PremierEssai.java	/^	StringProperty nom;$/;"	f	class:PremierEssai
 nomProperty	observable/PremierEssai.java	/^	public StringProperty nomProperty() {$/;"	m	class:PremierEssai
 nomProperty	observable/PremierEssai.java	/^	public void nomProperty(String valeur) {$/;"	m	class:PremierEssai
 observable	observable/ExObserver.java	/^package observable;$/;"	p
 observable	observable/PremierEssai.java	/^package observable;$/;"	p
+sensor	sensor/Sensor.java	/^package sensor;$/;"	p
+villes	observable/ExObserver.java	/^	private static Path villes = Paths.get("res","villes.txt");$/;"	f	class:ExObserver	file:

@@ -36,3 +36,4 @@ nbr	json/City.java	/^	private Integer nbr;$/;"	f	class:City	file:
 setCityList	json/CityList.java	/^	public void setCityList(ArrayList<City> cityList) {$/;"	m	class:CityList
 setName	json/City.java	/^	public void setName(String name) {$/;"	m	class:City
 setNbr	json/City.java	/^	public void setNbr(Integer nbr) {$/;"	m	class:City
+toString	json/City.java	/^	public String toString() {$/;"	m	class:City
