@@ -7,6 +7,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javafx.beans.binding.NumberBinding;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -22,6 +23,7 @@ import sensor.Sensor;
 public class ExObserver {
 	private static Path villes = Paths.get("res","villes.txt");
 	private static void exercice1() {
+		System.out.println("Exercice 1");
 		PremierEssai pe = new PremierEssai();
 		pe.nomProperty("Thirry?");
 		pe.nomProperty("Thierry!");
@@ -30,6 +32,7 @@ public class ExObserver {
 		
 	}
 	private static void exercice1Bis() {
+		System.out.println("Exercice 1Bis");
 		//faisons simple
 		StringProperty sp = new SimpleStringProperty();
 		sp.addListener((o,v,nv) -> System.out.println(o));
@@ -42,6 +45,7 @@ public class ExObserver {
 	
 	}
 	private static void exercice2() {
+		System.out.println("Exercice 2");
 		ObservableSet<City> oc = FXCollections.observableSet();
 		//oc.addListener(change -> System.out.format(change.wasAdded() ? "ajout de %s" : "retrait de %s",change.getElementAdded(),change.getElementRemoved()));
 /*	java un langage pour les devins	
@@ -51,9 +55,11 @@ public class ExObserver {
 			}
 		});*/
 
-		//finalement on va faire comme le prof
+		//finalement on va faire comme le prof(à peu pres :))
 		SetChangeListener<City> stl = change -> System.out.println(change.toString());
+		SetChangeListener<City> nbrAdd = change -> System.out.println("nbr de changement : "+X.incX());
 		oc.addListener(stl);
+		oc.addListener(nbrAdd);
 		oc.add(new City("paris",200));
 		oc.forEach(f -> oc.remove(f));
 		try { 
@@ -78,15 +84,33 @@ public class ExObserver {
 		}
 	}
 	private static void exercice3() {
+		System.out.println("Exercice 3");
 		//l'exercice 3 consiste a construire la classe Sensor et ajouter le calcul d'une valeur de temperature lisible
 		Sensor s = new Sensor(3000);
 		s.getValue().addListener((o,v,nv) -> System.out.format("temp : %s\n",nv));
+		s.stopTimer();
+	}
+	public static void exercice4() {
+		System.out.println("Exercice 4");
+		Sensor s1 = new Sensor(1000);
+		Sensor s2 = new Sensor(1000);
+		s1.getValue().addListener((o,v,nv) -> System.out.format("s1->%s\n",nv));
+		s2.getValue().addListener((o,v,nv) -> System.out.format("s2->%s\n",nv));
+		NumberBinding somme = s1.getValue().add(s2.getValue());
+		somme.addListener((o,v,nv) -> {
+			Double intNv = Double.valueOf(nv.toString());
+			System.out.format(" moyenne s1,s2 : %s\n",intNv/2);
+		});
+				s1.stopTimer();
+				s2.stopTimer();
+
 	}
 	public static void main(String[] args) {
 		exercice1();
 		exercice1Bis();
 		exercice2();
-//		exercice3();
+		exercice3();
+		exercice4();
 	}
 
 }
