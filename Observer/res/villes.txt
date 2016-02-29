@@ -1,0 +1,4 @@
+Montpellier 50
+Lyon 70
+Lille 60
+Bethune 1
