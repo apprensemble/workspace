@@ -9,6 +9,7 @@ public class SensorApplication extends Application {
 		SensorApplicationView root = new SensorApplicationView();
 		//SensorApplicationController controller = new SensorApplicationController(root);
 		//root.setController(controller);
+		
 		Scene scene = new Scene(root, 300, 180);
 		stage.setOnCloseRequest(event -> System.exit(0));
 		stage.setTitle("Capteurs");

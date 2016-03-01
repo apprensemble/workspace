@@ -1,0 +1,29 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Sensor	gui/model/Sensor.java	/^	public Sensor(long delay) {$/;"	m	class:Sensor
+Sensor	gui/model/Sensor.java	/^	public Sensor(long delay, String name) {$/;"	m	class:Sensor
+Sensor	gui/model/Sensor.java	/^public class Sensor {$/;"	c
+SensorApplication	gui/view/SensorApplication.java	/^public class SensorApplication extends Application {$/;"	c
+SensorApplicationView	gui/view/SensorApplicationView.java	/^	public SensorApplicationView() {$/;"	m	class:SensorApplicationView
+SensorApplicationView	gui/view/SensorApplicationView.java	/^public class SensorApplicationView extends BorderPane {$/;"	c
+SensorTask	gui/model/Sensor.java	/^	private class SensorTask extends TimerTask {$/;"	c	class:Sensor
+SensorView	gui/view/SensorView.java	/^public class SensorView extends VBox {$/;"	c
+getValue	gui/model/Sensor.java	/^	public IntegerProperty getValue() {$/;"	m	class:Sensor
+gui.model	gui/model/Sensor.java	/^package gui.model;$/;"	p
+gui.view	gui/view/SensorApplication.java	/^package gui.view;$/;"	p
+gui.view	gui/view/SensorApplicationView.java	/^package gui.view;$/;"	p
+gui.view	gui/view/SensorView.java	/^package gui.view;$/;"	p
+main	gui/view/SensorApplication.java	/^	public static void main(String [] args ) {$/;"	m	class:SensorApplication
+name	gui/model/Sensor.java	/^	private String name;$/;"	f	class:Sensor	file:
+r	gui/model/Sensor.java	/^	private Random r;$/;"	f	class:Sensor	file:
+read	gui/model/Sensor.java	/^	public void read() {$/;"	m	class:Sensor
+run	gui/model/Sensor.java	/^		public void run() {$/;"	m	class:Sensor.SensorTask
+start	gui/view/SensorApplication.java	/^	public void start(Stage stage) {$/;"	m	class:SensorApplication
+startTimer	gui/model/Sensor.java	/^	public void startTimer(long delay) {$/;"	m	class:Sensor
+stopTimer	gui/model/Sensor.java	/^	public void stopTimer() {$/;"	m	class:Sensor
+t	gui/model/Sensor.java	/^	private Timer t;$/;"	f	class:Sensor	file:
+value	gui/model/Sensor.java	/^	private IntegerProperty value;$/;"	f	class:Sensor	file:
