@@ -88,6 +88,7 @@ public class ExObserver {
 		//l'exercice 3 consiste a construire la classe Sensor et ajouter le calcul d'une valeur de temperature lisible
 		Sensor s = new Sensor(3000);
 		s.getValue().addListener((o,v,nv) -> System.out.format("temp : %s\n",nv));
+		//s.startTimer(2000);
 		s.stopTimer();
 	}
 	public static void exercice4() {
@@ -103,7 +104,6 @@ public class ExObserver {
 		});
 				s1.stopTimer();
 				s2.stopTimer();
-
 	}
 	public static void main(String[] args) {
 		exercice1();
