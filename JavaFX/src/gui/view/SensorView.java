@@ -17,6 +17,7 @@ public class SensorView extends VBox {
 	 *
 	 */
 	public SensorView(Sensor sensor) {
+		super();
 		this.sensor = sensor;
 		ajoutComposants();
 	}
@@ -24,6 +25,18 @@ public class SensorView extends VBox {
 	private void ajoutComposants() {
 		ajoutTitre();
 		stop_start = new Button("stop");
+		stop_start.setOnAction(event -> {
+			//if (sensor.stateProperty().get() == true) {
+			if (Boolean.TRUE.equals(sensor.stateProperty().get())) {
+				stop_start.setText("start");
+				sensor.stopTimer();
+			}
+			else {
+				stop_start.setText("stop");
+				sensor.startTimer(1000);
+			}
+
+		});
 		temp = new TextField("0");
 		temp.setEditable(false);
 		temp.textProperty().bind(sensor.tempProperty().asString());
