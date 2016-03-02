@@ -4,13 +4,16 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 
 public class Sensor {
 	private String name;
 	private Random r;
 	private IntegerProperty value;
+	private BooleanProperty started;
 	private Timer t;
 
 	public Sensor(long delay) {
@@ -21,6 +24,7 @@ public class Sensor {
 		this.name = name;
 		r = new Random();
 		value = new SimpleIntegerProperty();
+		started = new SimpleBooleanProperty();
 		value.setValue(r.nextInt());
 		startTimer(delay);
 	}
@@ -31,6 +35,7 @@ public class Sensor {
 	public void startTimer(long delay) {
 		t = new Timer();
 		t.schedule(new SensorTask(), delay, 2000);
+		started.setValue(true);
 	}
 	public void stopTimer() {
 		try {
@@ -40,13 +45,28 @@ public class Sensor {
 			e.printStackTrace();
 		}
 		t.cancel();
+		started.setValue(false);
 	}
 
 	/**
 	 * @return the value
 	 */
-	public IntegerProperty getValue() {
+	public IntegerProperty tempProperty() {
 		return value;
+	}
+
+	/**
+	 * @return the etat
+	 */
+	public BooleanProperty stateProperty() {
+		return started;
+	}
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
 	}
 
 	private class SensorTask extends TimerTask {

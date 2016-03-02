@@ -1,0 +1,72 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Sensor	gui/model/Sensor.java	/^	public Sensor(long delay) {$/;"	m	class:Sensor
+Sensor	gui/model/Sensor.java	/^	public Sensor(long delay, String name) {$/;"	m	class:Sensor
+Sensor	gui/model/Sensor.java	/^public class Sensor {$/;"	c
+SensorApplication	gui/view/SensorApplication.java	/^public class SensorApplication extends Application {$/;"	c
+SensorApplicationController	gui/controller/SensorApplicationController.java	/^	public SensorApplicationController(SensorApplicationView view) {$/;"	m	class:SensorApplicationController
+SensorApplicationController	gui/controller/SensorApplicationController.java	/^public class SensorApplicationController {$/;"	c
+SensorApplicationModel	gui/model/SensorApplicationModel.java	/^	public SensorApplicationModel() {$/;"	m	class:SensorApplicationModel
+SensorApplicationModel	gui/model/SensorApplicationModel.java	/^public class SensorApplicationModel {$/;"	c
+SensorApplicationView	gui/view/SensorApplicationView.java	/^	public SensorApplicationView() {$/;"	m	class:SensorApplicationView
+SensorApplicationView	gui/view/SensorApplicationView.java	/^public class SensorApplicationView extends BorderPane {$/;"	c
+SensorTask	gui/model/Sensor.java	/^	private class SensorTask extends TimerTask {$/;"	c	class:Sensor
+SensorView	gui/view/SensorView.java	/^	public SensorView(Sensor sensor) {$/;"	m	class:SensorView
+SensorView	gui/view/SensorView.java	/^public class SensorView extends VBox {$/;"	c
+addMenus	gui/view/SensorApplicationView.java	/^	private void addMenus() {$/;"	m	class:SensorApplicationView	file:
+addSensor	gui/controller/SensorApplicationController.java	/^	public void addSensor() {$/;"	m	class:SensorApplicationController
+addSensor	gui/model/SensorApplicationModel.java	/^	public void addSensor() {$/;"	m	class:SensorApplicationModel
+addSensor	gui/model/SensorApplicationModel.java	/^	public void addSensor(Sensor s) {$/;"	m	class:SensorApplicationModel
+addSensor	gui/view/SensorApplicationView.java	/^	private void addSensor() {$/;"	m	class:SensorApplicationView	file:
+addSensor	gui/view/SensorApplicationView.java	/^	public void addSensor(Sensor s) {$/;"	m	class:SensorApplicationView
+av	gui/model/Sensor.java	/^	private Double av = 0d;$/;"	f	class:Sensor	file:
+average	gui/model/Sensor.java	/^	private DoubleProperty average;$/;"	f	class:Sensor	file:
+average	gui/model/SensorApplicationModel.java	/^	DoubleProperty average;$/;"	f	class:SensorApplicationModel
+averageField	gui/view/SensorApplicationView.java	/^	public TextField averageField;$/;"	f	class:SensorApplicationView
+averageProperty	gui/model/Sensor.java	/^	public DoubleProperty averageProperty() {$/;"	m	class:Sensor
+averageProperty	gui/model/SensorApplicationModel.java	/^	public DoubleProperty averageProperty() {$/;"	m	class:SensorApplicationModel
+controller	gui/view/SensorApplicationView.java	/^	SensorApplicationController controller;$/;"	f	class:SensorApplicationView
+getName	gui/model/Sensor.java	/^	public String getName() {$/;"	m	class:Sensor
+gui.controller	gui/controller/SensorApplicationController.java	/^package gui.controller;$/;"	p
+gui.model	gui/model/Sensor.java	/^package gui.model;$/;"	p
+gui.model	gui/model/SensorApplicationModel.java	/^package gui.model;$/;"	p
+gui.view	gui/view/SensorApplication.java	/^package gui.view;$/;"	p
+gui.view	gui/view/SensorApplicationView.java	/^package gui.view;$/;"	p
+gui.view	gui/view/SensorView.java	/^package gui.view;$/;"	p
+initialize	gui/controller/SensorApplicationController.java	/^	public void initialize() {$/;"	m	class:SensorApplicationController
+initialize	gui/view/SensorView.java	/^	private void initialize() {$/;"	m	class:SensorView	file:
+isStopped	gui/model/Sensor.java	/^	private BooleanProperty isStopped;$/;"	f	class:Sensor	file:
+isStoppedProperty	gui/model/Sensor.java	/^	public BooleanProperty isStoppedProperty() {$/;"	m	class:Sensor
+main	gui/view/SensorApplication.java	/^	public static void main(String[] args) {$/;"	m	class:SensorApplication
+model	gui/controller/SensorApplicationController.java	/^	SensorApplicationModel model;$/;"	f	class:SensorApplicationController
+name	gui/model/Sensor.java	/^	private String name;$/;"	f	class:Sensor	file:
+name	gui/view/SensorView.java	/^	Label name;$/;"	f	class:SensorView
+nb	gui/model/Sensor.java	/^	private int nb = 0;$/;"	f	class:Sensor	file:
+openFile	gui/view/SensorApplicationView.java	/^	private void openFile() {$/;"	m	class:SensorApplicationView	file:
+parse	gui/controller/SensorApplicationController.java	/^	public void parse(Optional<File> optf) {$/;"	m	class:SensorApplicationController
+parse	gui/model/SensorApplicationModel.java	/^	public void parse(Optional<File> optf) {$/;"	m	class:SensorApplicationModel
+parse	gui/model/SensorApplicationModel.java	/^	public void parse(String fileName) {$/;"	m	class:SensorApplicationModel
+r	gui/model/Sensor.java	/^	private Random r;$/;"	f	class:Sensor	file:
+r	gui/view/SensorApplicationView.java	/^	Rectangle r;$/;"	f	class:SensorApplicationView
+read	gui/model/Sensor.java	/^	public void read() {$/;"	m	class:Sensor
+run	gui/model/Sensor.java	/^		public void run() {$/;"	m	class:Sensor.SensorTask
+sensor	gui/model/SensorApplicationModel.java	/^	ObjectProperty<Sensor> sensor;$/;"	f	class:SensorApplicationModel
+sensor	gui/view/SensorView.java	/^	Sensor sensor;$/;"	f	class:SensorView
+sensorPane	gui/view/SensorApplicationView.java	/^	StackPane sensorPane;$/;"	f	class:SensorApplicationView
+sensorProperty	gui/model/SensorApplicationModel.java	/^	public ObjectProperty<Sensor> sensorProperty() {$/;"	m	class:SensorApplicationModel
+setController	gui/view/SensorApplicationView.java	/^	public void setController(SensorApplicationController controller) {$/;"	m	class:SensorApplicationView
+setEventFilters	gui/view/SensorView.java	/^	private void setEventFilters() {$/;"	m	class:SensorView	file:
+start	gui/view/SensorApplication.java	/^	public void start(Stage stage) throws Exception {$/;"	m	class:SensorApplication
+start	gui/view/SensorView.java	/^	Button start;$/;"	f	class:SensorView
+startTimer	gui/model/Sensor.java	/^	public void startTimer(long delay) {$/;"	m	class:Sensor
+stop	gui/view/SensorView.java	/^	Button stop;$/;"	f	class:SensorView
+stopTimer	gui/model/Sensor.java	/^	public void stopTimer() {$/;"	m	class:Sensor
+t	gui/model/Sensor.java	/^	private Timer t;$/;"	f	class:Sensor	file:
+temp	gui/model/Sensor.java	/^	private IntegerProperty temp;$/;"	f	class:Sensor	file:
+tempProperty	gui/model/Sensor.java	/^	public IntegerProperty tempProperty() {$/;"	m	class:Sensor
+toString	gui/model/Sensor.java	/^	public String toString() {$/;"	m	class:Sensor
+view	gui/controller/SensorApplicationController.java	/^	SensorApplicationView view;$/;"	f	class:SensorApplicationController
