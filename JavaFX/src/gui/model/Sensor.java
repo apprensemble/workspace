@@ -38,12 +38,6 @@ public class Sensor {
 		started.setValue(true);
 	}
 	public void stopTimer() {
-		try {
-			Thread.sleep(6000);
-		}
-		catch (InterruptedException e) {
-			e.printStackTrace();
-		}
 		t.cancel();
 		started.setValue(false);
 	}

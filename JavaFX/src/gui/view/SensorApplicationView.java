@@ -2,6 +2,8 @@ package gui.view;
 
 import gui.model.Sensor;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
@@ -12,9 +14,12 @@ import javafx.scene.layout.HBox;
 
 public class SensorApplicationView extends BorderPane {
 	private FlowPane principal;
+	private IntegerProperty nbrSensors;
 
 	public SensorApplicationView() {
 		super();
+		nbrSensors = new SimpleIntegerProperty();
+		nbrSensors.setValue(0);
 		ajoutMenu();
 		ajoutContainer();
 		ajoutStatus();
@@ -33,6 +38,7 @@ public class SensorApplicationView extends BorderPane {
 	}
 
 	private void ajoutSensor() {
+	nbrSensors.setValue(nbrSensors.getValue()+1);
 		SensorView sv = new SensorView(new Sensor(2000));
 		principal.getChildren().add(sv);
 	}
@@ -51,7 +57,23 @@ public class SensorApplicationView extends BorderPane {
 
 	private void ajoutStatus() {
 		HBox status = new HBox(8);
-		status.getChildren().addAll(new Label("sensor(s) :"), new Label("0"), new Label("moyenne :"), new Label("0"), new Label("derniere action : "), new Label("aucune"));
+		Label tNbrSensor = new Label("sensor(s) :");
+		Label nbrSensor = new Label("0");
+		Label tMoy = new Label("moyenne :");
+		Label moy = new Label("0");
+		Label tAction = new Label("derniere action : ");
+		Label action = new Label("aucune");
+		//nbrSensor.
+		nbrSensor.textProperty().bind(nbrSensors.asString());
+		nbrSensor.textProperty().addListener((o,v,nv) -> {
+			if (Integer.valueOf(nv) > 1) {
+				tNbrSensor.setText("sensors");
+			}
+			else {
+				tNbrSensor.setText("sensor");
+			}
+		});
+		status.getChildren().addAll(tNbrSensor, nbrSensor, tMoy, moy, tAction, action);
 		setBottom(status);
 	}
 }
