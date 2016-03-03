@@ -8,11 +8,15 @@ Sensor	gui/model/Sensor.java	/^	public Sensor(long delay) {$/;"	m	class:Sensor
 Sensor	gui/model/Sensor.java	/^	public Sensor(long delay, String name) {$/;"	m	class:Sensor
 Sensor	gui/model/Sensor.java	/^public class Sensor {$/;"	c
 SensorApplication	gui/view/SensorApplication.java	/^public class SensorApplication extends Application {$/;"	c
+SensorApplicationController	gui/controller/SensorApplicationController.java	/^	public SensorApplicationController(SensorApplicationView sav) {$/;"	m	class:SensorApplicationController
+SensorApplicationController	gui/controller/SensorApplicationController.java	/^public class SensorApplicationController {$/;"	c
+SensorApplicationModel	gui/model/SensorApplicationModel.java	/^public class SensorApplicationModel {$/;"	c
 SensorApplicationView	gui/view/SensorApplicationView.java	/^	public SensorApplicationView() {$/;"	m	class:SensorApplicationView
 SensorApplicationView	gui/view/SensorApplicationView.java	/^public class SensorApplicationView extends BorderPane {$/;"	c
 SensorTask	gui/model/Sensor.java	/^	private class SensorTask extends TimerTask {$/;"	c	class:Sensor
 SensorView	gui/view/SensorView.java	/^	public SensorView(Sensor sensor) {$/;"	m	class:SensorView
 SensorView	gui/view/SensorView.java	/^public class SensorView extends VBox {$/;"	c
+aParser	gui/view/SensorApplicationView.java	/^	private void aParser() {$/;"	m	class:SensorApplicationView	file:
 ajoutComposants	gui/view/SensorView.java	/^	private void ajoutComposants() {$/;"	m	class:SensorView	file:
 ajoutContainer	gui/view/SensorApplicationView.java	/^	private void ajoutContainer() {$/;"	m	class:SensorApplicationView	file:
 ajoutMenu	gui/view/SensorApplicationView.java	/^	private void ajoutMenu() {$/;"	m	class:SensorApplicationView	file:
@@ -21,17 +25,22 @@ ajoutStatus	gui/view/SensorApplicationView.java	/^	private void ajoutStatus() {$
 ajoutStatus	gui/view/SensorView.java	/^	private void ajoutStatus() {$/;"	m	class:SensorView	file:
 ajoutTitre	gui/view/SensorView.java	/^	private void ajoutTitre() {$/;"	m	class:SensorView	file:
 getName	gui/model/Sensor.java	/^	public String getName() {$/;"	m	class:Sensor
+gui.controller	gui/controller/SensorApplicationController.java	/^package gui.controller;$/;"	p
 gui.model	gui/model/Sensor.java	/^package gui.model;$/;"	p
+gui.model	gui/model/SensorApplicationModel.java	/^package gui.model;$/;"	p
 gui.view	gui/view/SensorApplication.java	/^package gui.view;$/;"	p
 gui.view	gui/view/SensorApplicationView.java	/^package gui.view;$/;"	p
 gui.view	gui/view/SensorView.java	/^package gui.view;$/;"	p
 main	gui/view/SensorApplication.java	/^	public static void main(String [] args ) {$/;"	m	class:SensorApplication
 name	gui/model/Sensor.java	/^	private String name;$/;"	f	class:Sensor	file:
+nbrSensors	gui/view/SensorApplicationView.java	/^	private IntegerProperty nbrSensors;$/;"	f	class:SensorApplicationView	file:
 principal	gui/view/SensorApplicationView.java	/^	private FlowPane principal;$/;"	f	class:SensorApplicationView	file:
 quit	gui/view/SensorApplicationView.java	/^	private void quit() {$/;"	m	class:SensorApplicationView	file:
 r	gui/model/Sensor.java	/^	private Random r;$/;"	f	class:Sensor	file:
 read	gui/model/Sensor.java	/^	public void read() {$/;"	m	class:Sensor
 run	gui/model/Sensor.java	/^		public void run() {$/;"	m	class:Sensor.SensorTask
+sam	gui/controller/SensorApplicationController.java	/^	private SensorApplicationModel sam;$/;"	f	class:SensorApplicationController	file:
+sav	gui/controller/SensorApplicationController.java	/^	private SensorApplicationView sav;$/;"	f	class:SensorApplicationController	file:
 sensor	gui/view/SensorView.java	/^	private Sensor sensor;$/;"	f	class:SensorView	file:
 start	gui/view/SensorApplication.java	/^	public void start(Stage stage) {$/;"	m	class:SensorApplication
 startTimer	gui/model/Sensor.java	/^	public void startTimer(long delay) {$/;"	m	class:Sensor

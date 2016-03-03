@@ -1,5 +1,7 @@
 package gui.view;
 
+import java.io.File;
+
 import gui.model.Sensor;
 
 import javafx.beans.property.IntegerProperty;
@@ -11,6 +13,8 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 public class SensorApplicationView extends BorderPane {
 	private FlowPane principal;
@@ -28,13 +32,24 @@ public class SensorApplicationView extends BorderPane {
 		MenuBar menu = new MenuBar();
 		Menu fichier = new Menu("Fichier");
 		Menu sensor = new Menu("Sensor");
+		MenuItem parser = new MenuItem("à parser");
+		parser.setOnAction(event -> aParser());
 		menu.getMenus().addAll(fichier,sensor);
+
+		fichier.getItems().add(parser);
 		fichier.getItems().add(new MenuItem("quitter"));
 		fichier.getItems().get(0).setOnAction(e -> quit());
 		sensor.getItems().add(new MenuItem("ajouter"));
 		sensor.getItems().get(0).setOnAction(e -> ajoutSensor());
 
 		setTop(menu);
+	}
+
+	private void aParser() {
+		FileChooser sel = new FileChooser();
+		sel.setTitle("selectionnez le fichier sensor à integrer");
+		sel.setInitialDirectory(new File("."));
+		File f = sel.showOpenDialog(new Stage());
 	}
 
 	private void ajoutSensor() {

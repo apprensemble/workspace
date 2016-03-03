@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 public class SensorApplication extends Application {
 	public void start(Stage stage) {
 		SensorApplicationView root = new SensorApplicationView();
-		//SensorApplicationController controller = new SensorApplicationController(root);
+		SensorApplicationController controller = new SensorApplicationController(root);
 		//root.setController(controller);
 		
 		Scene scene = new Scene(root, 300, 200);
