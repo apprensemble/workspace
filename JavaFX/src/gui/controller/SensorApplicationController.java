@@ -14,5 +14,6 @@ public class SensorApplicationController {
 		super();
 		sam = new SensorApplicationModel();
 		this.sav = sav;
+		
 	}
 }
