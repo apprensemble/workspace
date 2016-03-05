@@ -14,6 +14,14 @@ public class SensorApplicationController {
 		super();
 		sam = new SensorApplicationModel();
 		this.sav = sav;
-		
+		init();
+	}
+
+	private void init() {
+		sav.getNbrSensor().textProperty().bind(sam.nbrSensorsProperty().asString());
+	}
+
+	private void addSensor() {
+		sam.nbrSensorsProperty().add(1);
 	}
 }

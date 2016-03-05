@@ -2,10 +2,9 @@ package gui.view;
 
 import java.io.File;
 
+import gui.controller.SensorApplicationController;
 import gui.model.Sensor;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
@@ -18,16 +17,20 @@ import javafx.stage.Stage;
 
 public class SensorApplicationView extends BorderPane {
 	private FlowPane principal;
-	private IntegerProperty nbrSensors;
+	private Label tNbrSensor, nbrSensor, moy, action;
+	private SensorApplicationController sac;
 
 	public SensorApplicationView() {
 		super();
-		nbrSensors = new SimpleIntegerProperty();
-		nbrSensors.setValue(0);
 		ajoutMenu();
 		ajoutContainer();
 		ajoutStatus();
 	}
+
+	public void setController(SensorApplicationController sac) {
+		this.sac = sac;
+	}
+
 	private void ajoutMenu() {
 		MenuBar menu = new MenuBar();
 		Menu fichier = new Menu("Fichier");
@@ -53,7 +56,8 @@ public class SensorApplicationView extends BorderPane {
 	}
 
 	private void ajoutSensor() {
-	nbrSensors.setValue(nbrSensors.getValue()+1);
+	//TODO passer par le controller pour creer le sensor
+		sac.addSensor();
 		SensorView sv = new SensorView(new Sensor(2000));
 		principal.getChildren().add(sv);
 	}
@@ -72,14 +76,14 @@ public class SensorApplicationView extends BorderPane {
 
 	private void ajoutStatus() {
 		HBox status = new HBox(8);
-		Label tNbrSensor = new Label("sensor(s) :");
-		Label nbrSensor = new Label("0");
+		tNbrSensor = new Label("sensor(s) :");
+		nbrSensor = new Label("0");
 		Label tMoy = new Label("moyenne :");
-		Label moy = new Label("0");
+		moy = new Label("0");
 		Label tAction = new Label("derniere action : ");
-		Label action = new Label("aucune");
+		action = new Label("aucune");
 		//nbrSensor.
-		nbrSensor.textProperty().bind(nbrSensors.asString());
+		//TODO comment les binder en respectant le mvc
 		nbrSensor.textProperty().addListener((o,v,nv) -> {
 			if (Integer.valueOf(nv) > 1) {
 				tNbrSensor.setText("sensors");
@@ -90,5 +94,61 @@ public class SensorApplicationView extends BorderPane {
 		});
 		status.getChildren().addAll(tNbrSensor, nbrSensor, tMoy, moy, tAction, action);
 		setBottom(status);
+	}
+
+	/**
+	 * @return the tNbrSensor
+	 */
+	public Label gettNbrSensor() {
+		return tNbrSensor;
+	}
+
+	/**
+	 * @param tNbrSensor the tNbrSensor to set
+	 */
+	public void settNbrSensor(Label tNbrSensor) {
+		this.tNbrSensor = tNbrSensor;
+	}
+
+	/**
+	 * @return the nbrSensor
+	 */
+	public Label getNbrSensor() {
+		return nbrSensor;
+	}
+
+	/**
+	 * @param nbrSensor the nbrSensor to set
+	 */
+	public void setNbrSensor(Label nbrSensor) {
+		this.nbrSensor = nbrSensor;
+	}
+
+	/**
+	 * @return the moy
+	 */
+	public Label getMoy() {
+		return moy;
+	}
+
+	/**
+	 * @param moy the moy to set
+	 */
+	public void setMoy(Label moy) {
+		this.moy = moy;
+	}
+
+	/**
+	 * @return the action
+	 */
+	public Label getAction() {
+		return action;
+	}
+
+	/**
+	 * @param action the action to set
+	 */
+	public void setAction(Label action) {
+		this.action = action;
 	}
 }

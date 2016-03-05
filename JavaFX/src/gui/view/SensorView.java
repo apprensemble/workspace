@@ -11,6 +11,7 @@ import javafx.scene.layout.VBox;
 public class SensorView extends VBox {
 	private TextField temp;
 	private Button stop_start;
+	//TODO retirer le sensor de la vue et deplacer les bindings dans le controller
 	private Sensor sensor;
 
 	/**
