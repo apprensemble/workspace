@@ -1,5 +1,7 @@
 package gui.view;
 
+import gui.controller.SensorApplicationController;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -8,7 +10,7 @@ public class SensorApplication extends Application {
 	public void start(Stage stage) {
 		SensorApplicationView root = new SensorApplicationView();
 		SensorApplicationController controller = new SensorApplicationController(root);
-		//root.setController(controller);
+		root.setController(controller);
 		
 		Scene scene = new Scene(root, 300, 200);
 		stage.setOnCloseRequest(event -> System.exit(0));

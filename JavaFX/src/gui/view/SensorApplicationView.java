@@ -40,8 +40,9 @@ public class SensorApplicationView extends BorderPane {
 		menu.getMenus().addAll(fichier,sensor);
 
 		fichier.getItems().add(parser);
-		fichier.getItems().add(new MenuItem("quitter"));
-		fichier.getItems().get(0).setOnAction(e -> quit());
+		MenuItem quitter = new MenuItem("quitter");
+		fichier.getItems().add(quitter);
+		quitter.setOnAction(e -> quit());
 		sensor.getItems().add(new MenuItem("ajouter"));
 		sensor.getItems().get(0).setOnAction(e -> ajoutSensor());
 
@@ -57,13 +58,13 @@ public class SensorApplicationView extends BorderPane {
 
 	private void ajoutSensor() {
 	//TODO passer par le controller pour creer le sensor
-		sac.addSensor();
-		SensorView sv = new SensorView(new Sensor(2000));
+		sac.ajoutSensor();
+		SensorView sv = new SensorView();
 		principal.getChildren().add(sv);
 	}
 
 	private void quit() {
-		System.exit(0);
+		sac.quit();
 	}
 
 	private void ajoutContainer() {
