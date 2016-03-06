@@ -1,9 +1,11 @@
 package gui.controller;
 
+
 import gui.model.SensorApplicationModel;
 import gui.view.SensorApplicationView;
 
 public class SensorApplicationController {
+
 	private SensorApplicationView sav;
 	private SensorApplicationModel sam;
 
@@ -15,6 +17,12 @@ public class SensorApplicationController {
 		sam = new SensorApplicationModel();
 		this.sav = sav;
 		init();
+	}
+
+	/**
+	 *
+	 */
+	public SensorApplicationController() {
 	}
 
 	private void init() {
@@ -37,7 +45,8 @@ public class SensorApplicationController {
 	}
 
 	public void ajoutSensor() {
-		sam.nbrSensorsProperty().add(1);
+		sam.ajoutSensor();
+		sam.sensorProperty().addListener((o,v,nv) -> sav.getMoy().setText(nv.getName()));
 	}
 
 	public void quit() {

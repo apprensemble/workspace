@@ -46,6 +46,8 @@ public class SensorApplicationView extends BorderPane {
 		sensor.getItems().add(new MenuItem("ajouter"));
 		sensor.getItems().get(0).setOnAction(e -> ajoutSensor());
 
+		sensor.setOnAction(e -> action.setText("ajout sensor"));
+
 		setTop(menu);
 	}
 
