@@ -15,9 +15,10 @@ public class Sensor {
 	private IntegerProperty value;
 	private BooleanProperty started;
 	private Timer t;
+	private static Integer nbr = 0;
 
 	public Sensor(long delay) {
-		this(delay,"noname");
+		this(delay,"Capteur "+nbr++);
 	}
 	
 	public Sensor(long delay, String name) {

@@ -9,7 +9,7 @@ import javafx.scene.layout.VBox;
 public class SensorView extends VBox {
 private TextField temp;
 private Button stop_start;
-private Label etat;
+private Label etat, titre;
 //TODO retirer le sensor de la vue et deplacer les bindings dans le controller
 
 /**
@@ -31,9 +31,7 @@ private void ajoutComposants() {
 	}
 
 	private void ajoutTitre() {
-		Label titre = new Label("Titre");
-		//TODO demander le nom au controller
-		//titre.textProperty().setValue(sensor.getName());
+		titre = new Label("Titre");
 		getChildren().add(titre);
 	}
 
@@ -65,6 +63,13 @@ private void ajoutComposants() {
 	 */
 	public Label getEtat() {
 		return etat;
+	}
+
+	/**
+	 * @return the titre
+	 */
+	public Label getTitre() {
+		return titre;
 	}
 	
 }

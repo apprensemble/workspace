@@ -1,13 +1,13 @@
 package gui.controller;
 
 
+import gui.model.Sensor;
 import gui.model.SensorApplicationModel;
 import gui.view.SensorApplicationView;
 import gui.view.SensorView;
 
 import javafx.application.Platform;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.StringProperty;
+import javafx.scene.control.Label;
 
 public class SensorApplicationController {
 
@@ -33,10 +33,26 @@ public class SensorApplicationController {
 		sam.ajoutSensor();
 		Platform.runLater(new Runnable() {
 			public void run() {
-				sv.getTemp().textProperty().bind(sam.sensorProperty().get().tempProperty().asString());
-				sv.getEtat().textProperty().bind(sam.sensorProperty().get().stateProperty().asString());
+				Label moyenne = sav.getMoy();
+				
+				Sensor sensor = sam.sensorProperty().get();
+				moyenne.textProperty().bind(sensor.tempProperty().asString());
+				sv.getTemp().textProperty().bind(sensor.tempProperty().asString());
+				sv.getTitre().setText(sensor.getName());
+				sv.getEtat().textProperty().bind(sensor.stateProperty().asString());
+				sv.getStop_start().setOnAction(event -> {
+					//if (sensor.stateProperty().get() == true) {
+					if (Boolean.TRUE.equals(sensor.stateProperty().get())) {
+						sv.getStop_start().setText("start");
+						sensor.stopTimer();
+					}
+					else {
+						sv.getStop_start().setText("stop");
+						sensor.startTimer(1000);
+					}
+				});
 			}
-		});
+			});
 	}
 
 	public void quit() {
