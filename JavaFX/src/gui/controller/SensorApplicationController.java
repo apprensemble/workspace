@@ -4,6 +4,9 @@ package gui.controller;
 import gui.model.SensorApplicationModel;
 import gui.view.SensorApplicationView;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.StringProperty;
+
 public class SensorApplicationController {
 
 	private SensorApplicationView sav;
@@ -19,14 +22,10 @@ public class SensorApplicationController {
 		init();
 	}
 
-	/**
-	 *
-	 */
-	public SensorApplicationController() {
-	}
 
 	private void init() {
 		sav.getNbrSensor().textProperty().bind(sam.nbrSensorsProperty().asString());
+		sam.sensorProperty().addListener((o,v,nv) -> sav.ajoutSensor(nv.tempProperty(),nv.stateProperty()));
 		/*stop_start.setOnAction(event -> {
 			//if (sensor.stateProperty().get() == true) {
 			if (Boolean.TRUE.equals(sensor.stateProperty().get())) {
@@ -46,7 +45,9 @@ public class SensorApplicationController {
 
 	public void ajoutSensor() {
 		sam.ajoutSensor();
-		sam.sensorProperty().addListener((o,v,nv) -> sav.getMoy().setText(nv.getName()));
+		//sam.sensorProperty().addListener((o,v,nv) -> sav.getMoy().setText(nv.getName()));
+		//sav.getMoy().textProperty().bind(sam.sensorProperty().getValue().tempProperty().asString());
+		//sam.sensorProperty().getValue().tempProperty().addListener((o,v,nv) -> sav.getMoy().setText(nv.toString()));
 	}
 
 	public void quit() {

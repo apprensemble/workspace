@@ -5,6 +5,8 @@ import java.io.File;
 import gui.controller.SensorApplicationController;
 import gui.model.Sensor;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.IntegerProperty;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
@@ -61,7 +63,10 @@ public class SensorApplicationView extends BorderPane {
 	private void ajoutSensor() {
 	//TODO passer par le controller pour creer le sensor
 		sac.ajoutSensor();
-		SensorView sv = new SensorView();
+	}
+
+	public void ajoutSensor(IntegerProperty val, BooleanProperty etat) {
+		SensorView sv = new SensorView(val,etat);
 		principal.getChildren().add(sv);
 	}
 

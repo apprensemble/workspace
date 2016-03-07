@@ -21,7 +21,7 @@ public class SensorApplicationModel {
 	}
 
 	public void ajoutSensor() {
-		Optional.ofNullable(sensor.getValue()).ifPresent(s -> s.stopTimer());
+		//Optional.ofNullable(sensor.getValue()).ifPresent(s -> s.stopTimer());
 		sensor.setValue(new Sensor(2000));
 		nbrSensors.set(nbrSensors.get()+1);
 	}
