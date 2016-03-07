@@ -1,7 +1,5 @@
 package gui.view;
 
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.IntegerProperty;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -9,8 +7,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 public class SensorView extends VBox {
-	private IntegerProperty iTemp;
-	private BooleanProperty bEtat;
 private TextField temp;
 private Button stop_start;
 private Label etat;
@@ -19,20 +15,18 @@ private Label etat;
 /**
  *
  */
-public SensorView(IntegerProperty val, BooleanProperty etat) {
+public SensorView() {
 	super();
-	iTemp = val;
-	bEtat = etat;
 	ajoutComposants();
 }
 
 private void ajoutComposants() {
 	ajoutTitre();
 	stop_start = new Button("stop");
+	//stop_start.setOnAction(e -> 
 	temp = new TextField("0");
 	temp.setEditable(false);
 	getChildren().addAll(temp,stop_start);
-	iTemp.addListener((o,v,nv) -> temp.setText(nv.toString()));
 		ajoutStatus();
 	}
 
@@ -48,7 +42,6 @@ private void ajoutComposants() {
 		etat = new Label("true");
 		//je commence par un as string mais a terme je souhaiterais une lambda expression qui affiche demarré ou arreté
 		status.getChildren().addAll(new Label("demarré :"), etat);
-	bEtat.addListener((o,v,nv) -> etat.setText(nv.toString()));
 		getChildren().add(status);
 	
 	}

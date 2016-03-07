@@ -62,13 +62,11 @@ public class SensorApplicationView extends BorderPane {
 
 	private void ajoutSensor() {
 	//TODO passer par le controller pour creer le sensor
-		sac.ajoutSensor();
-	}
-
-	public void ajoutSensor(IntegerProperty val, BooleanProperty etat) {
-		SensorView sv = new SensorView(val,etat);
+		SensorView sv = new SensorView();
+		sac.ajoutSensor(sv);
 		principal.getChildren().add(sv);
 	}
+
 
 	private void quit() {
 		sac.quit();

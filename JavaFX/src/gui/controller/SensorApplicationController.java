@@ -3,7 +3,9 @@ package gui.controller;
 
 import gui.model.SensorApplicationModel;
 import gui.view.SensorApplicationView;
+import gui.view.SensorView;
 
+import javafx.application.Platform;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.StringProperty;
 
@@ -25,29 +27,16 @@ public class SensorApplicationController {
 
 	private void init() {
 		sav.getNbrSensor().textProperty().bind(sam.nbrSensorsProperty().asString());
-		sam.sensorProperty().addListener((o,v,nv) -> sav.ajoutSensor(nv.tempProperty(),nv.stateProperty()));
-		/*stop_start.setOnAction(event -> {
-			//if (sensor.stateProperty().get() == true) {
-			if (Boolean.TRUE.equals(sensor.stateProperty().get())) {
-				stop_start.setText("start");
-				sensor.stopTimer();
-			}
-			else {
-				stop_start.setText("stop");
-				sensor.startTimer(1000);
-			}
-
-		});
-	temp.textProperty().bind(sensor.tempProperty().asString());
-		etat.textProperty().bind(sensor.stateProperty().asString());
-		*/
 	}
 
-	public void ajoutSensor() {
+	public void ajoutSensor(SensorView sv) {
 		sam.ajoutSensor();
-		//sam.sensorProperty().addListener((o,v,nv) -> sav.getMoy().setText(nv.getName()));
-		//sav.getMoy().textProperty().bind(sam.sensorProperty().getValue().tempProperty().asString());
-		//sam.sensorProperty().getValue().tempProperty().addListener((o,v,nv) -> sav.getMoy().setText(nv.toString()));
+		Platform.runLater(new Runnable() {
+			public void run() {
+				sv.getTemp().textProperty().bind(sam.sensorProperty().get().tempProperty().asString());
+				sv.getEtat().textProperty().bind(sam.sensorProperty().get().stateProperty().asString());
+			}
+		});
 	}
 
 	public void quit() {
