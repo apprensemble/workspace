@@ -33,10 +33,17 @@ public class SensorApplicationController {
 		sam.ajoutSensor();
 		Platform.runLater(new Runnable() {
 			public void run() {
-				Label moyenne = sav.getMoy();
 				
 				Sensor sensor = sam.sensorProperty().get();
-				moyenne.textProperty().bind(sensor.tempProperty().asString());
+			//	sav.getMoy().textProperty().bind(sensor.tempProperty().asString());
+				sam.moyProperty().asString().addListener((o,v,nv) -> {
+					Platform.runLater(new Runnable() {
+						public void run() {
+							sav.getMoy().setText(nv);
+						}
+					});
+				}
+					);
 				sv.getTemp().textProperty().bind(sensor.tempProperty().asString());
 				sv.getTitre().setText(sensor.getName());
 				sv.getEtat().textProperty().bind(sensor.stateProperty().asString());

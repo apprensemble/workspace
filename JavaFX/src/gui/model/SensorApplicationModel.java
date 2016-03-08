@@ -5,11 +5,13 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.collections.ObservableList;
 
 public class SensorApplicationModel {
 	private ObjectProperty<Sensor> sensor;
 	private IntegerProperty nbrSensors, moyenne;
-	private NumberBinding moy;
+	private NumberBinding total,moy;
+	private ObservableList<Sensor> ol;
 
 	/**
 	 *
@@ -20,13 +22,17 @@ public class SensorApplicationModel {
 		moyenne = new SimpleIntegerProperty();
 		moyenne.setValue(0);
 		sensor = new SimpleObjectProperty<>();
+		total = moyenne.add(moyenne);
+		
 	}
 
 	public void ajoutSensor() {
 		//Optional.ofNullable(sensor.getValue()).ifPresent(s -> s.stopTimer());
-		sensor.setValue(new Sensor(2000));
+		Sensor s = new Sensor(1000);
+		sensor.setValue(s);
 		nbrSensors.set(nbrSensors.get()+1);
-		moy = moyenne.add(sensor.get().tempProperty()).divide(nbrSensors);
+		total = total.add(sensor.get().tempProperty());
+		moy = total.divide(nbrSensors);
 	}
 
 	/**
@@ -54,6 +60,20 @@ public class SensorApplicationModel {
 	 * @return the moy
 	 */
 	public NumberBinding moyProperty() {
+		return moy;
+	}
+
+	/**
+	 * @return the total
+	 */
+	public NumberBinding totalProperty() {
+		return total;
+	}
+
+	/**
+	 * @return the moy
+	 */
+	public NumberBinding getMoy() {
 		return moy;
 	}
 }
